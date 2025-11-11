@@ -3,8 +3,8 @@ import { Carousel, CarouselContent, CarouselItem, CarouselNext, CarouselPrevious
 import Autoplay from "embla-carousel-autoplay";
 import heroEmergency from "@/assets/hero-emergency-response.jpg";
 import heroLostDog from "@/assets/hero-lost-dog.jpg";
-import heroConsent from "@/assets/hero-consent-response.jpg";
 import heroApartment from "@/assets/hero-apartment-emergency.jpg";
+import heroWellness from "@/assets/hero-wellness-check.jpg";
 import { useEffect, useState, useRef } from "react";
 
 const Hero = () => {
@@ -25,8 +25,8 @@ const Hero = () => {
       alt: "Urban apartment neighbors responding to emergency in hallway"
     },
     {
-      image: heroConsent,
-      alt: "Neighbor responding to consent emergency safeword call"
+      image: heroWellness,
+      alt: "Police officer and neighbor conducting wellness check together"
     }
   ];
 
