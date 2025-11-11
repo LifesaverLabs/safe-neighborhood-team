@@ -1,4 +1,5 @@
 import { Button } from "@/components/ui/button";
+import heroImage from "@/assets/hero-emergency-response.jpg";
 
 const Hero = () => {
   const scrollToGetInvolved = () => {
@@ -6,8 +7,15 @@ const Hero = () => {
   };
 
   return (
-    <section className="relative min-h-[600px] flex items-center justify-center overflow-hidden bg-gradient-to-br from-primary via-secondary to-accent">
-      <div className="absolute inset-0 bg-[radial-gradient(circle_at_50%_120%,rgba(255,255,255,0.1),transparent)]" />
+    <section className="relative min-h-[600px] flex items-center justify-center overflow-hidden">
+      <div className="absolute inset-0">
+        <img 
+          src={heroImage} 
+          alt="Neighbors responding to emergency - one knocking urgently on door, another administering CPR" 
+          className="w-full h-full object-cover"
+        />
+        <div className="absolute inset-0 bg-gradient-to-r from-black/70 via-black/50 to-transparent" />
+      </div>
       <div className="container relative z-10 px-4 py-20 mx-auto text-center">
         <h1 className="mb-6 text-5xl font-bold text-primary-foreground md:text-6xl lg:text-7xl">
           Neighbor 911™

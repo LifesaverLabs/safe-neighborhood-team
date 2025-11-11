@@ -17,16 +17,16 @@ All colors MUST be HSL.
     --popover: 0 0% 100%;
     --popover-foreground: 220 15% 20%;
 
-    --primary: 355 75% 45%;
+    --primary: 24 100% 50%; /* International safety orange */
     --primary-foreground: 0 0% 100%;
 
-    --secondary: 210 70% 50%;
+    --secondary: 24 100% 60%; /* Lighter safety orange */
     --secondary-foreground: 0 0% 100%;
 
     --muted: 210 20% 95%;
     --muted-foreground: 220 10% 45%;
 
-    --accent: 210 70% 50%;
+    --accent: 24 90% 55%; /* Safety orange accent */
     --accent-foreground: 0 0% 100%;
 
     --destructive: 0 84.2% 60.2%;
@@ -34,7 +34,7 @@ All colors MUST be HSL.
 
     --border: 220 15% 88%;
     --input: 220 15% 88%;
-    --ring: 355 75% 45%;
+    --ring: 24 100% 50%; /* Safety orange ring */
 
     --radius: 0.5rem;
 
@@ -45,7 +45,7 @@ All colors MUST be HSL.
     --trust: 210 70% 50%;
     --trust-foreground: 0 0% 100%;
     
-    --hero-gradient: linear-gradient(135deg, hsl(355 75% 45%), hsl(210 70% 50%));
+    --hero-gradient: linear-gradient(135deg, hsl(24 100% 50%), hsl(24 100% 60%));
     --section-gradient: linear-gradient(180deg, hsl(0 0% 100%), hsl(210 20% 98%));
     
     --shadow-soft: 0 4px 20px -5px hsl(220 15% 20% / 0.1);
@@ -64,16 +64,16 @@ All colors MUST be HSL.
     --popover: 220 18% 14%;
     --popover-foreground: 0 0% 95%;
 
-    --primary: 355 75% 55%;
+    --primary: 24 100% 55%; /* International safety orange (dark mode) */
     --primary-foreground: 0 0% 100%;
 
-    --secondary: 210 70% 55%;
+    --secondary: 24 100% 65%; /* Lighter safety orange (dark mode) */
     --secondary-foreground: 0 0% 100%;
 
     --muted: 220 15% 20%;
     --muted-foreground: 220 10% 65%;
 
-    --accent: 210 70% 55%;
+    --accent: 24 90% 60%; /* Safety orange accent (dark mode) */
     --accent-foreground: 0 0% 100%;
 
     --destructive: 0 62.8% 50%;
@@ -81,7 +81,7 @@ All colors MUST be HSL.
 
     --border: 220 15% 25%;
     --input: 220 15% 25%;
-    --ring: 355 75% 55%;
+    --ring: 24 100% 55%; /* Safety orange ring (dark mode) */
     
     --community: 25 85% 65%;
     --community-foreground: 0 0% 100%;
@@ -89,7 +89,7 @@ All colors MUST be HSL.
     --trust: 210 70% 60%;
     --trust-foreground: 0 0% 100%;
     
-    --hero-gradient: linear-gradient(135deg, hsl(355 75% 45%), hsl(210 70% 50%));
+    --hero-gradient: linear-gradient(135deg, hsl(24 100% 50%), hsl(24 100% 60%));
     --section-gradient: linear-gradient(180deg, hsl(220 20% 10%), hsl(220 18% 14%));
   }
 }
