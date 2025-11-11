@@ -1,7 +1,26 @@
 import { Button } from "@/components/ui/button";
 import heroImage from "@/assets/hero-emergency-response.jpg";
+import { useEffect, useState } from "react";
 
 const Hero = () => {
+  const [seconds, setSeconds] = useState(90);
+
+  useEffect(() => {
+    if (seconds <= 0) return;
+    
+    const timer = setInterval(() => {
+      setSeconds((prev) => (prev > 0 ? prev - 1 : 0));
+    }, 1000);
+
+    return () => clearInterval(timer);
+  }, [seconds]);
+
+  const formatTime = (secs: number) => {
+    const mins = Math.floor(secs / 60);
+    const remainingSecs = secs % 60;
+    return `${mins}:${remainingSecs.toString().padStart(2, '0')}`;
+  };
+
   const scrollToGetInvolved = () => {
     document.getElementById("get-involved")?.scrollIntoView({ behavior: "smooth" });
   };
@@ -16,6 +35,15 @@ const Hero = () => {
         />
         <div className="absolute inset-0 bg-gradient-to-r from-black/70 via-black/50 to-transparent" />
       </div>
+      
+      {/* Countdown Timer */}
+      <div className="absolute top-8 right-8 z-20 bg-primary text-primary-foreground px-6 py-4 rounded-lg shadow-lg border-2 border-primary-foreground/20 animate-fade-in">
+        <div className="text-sm font-medium mb-1 opacity-90">Response Time</div>
+        <div className="text-5xl font-bold tabular-nums tracking-tight">
+          {formatTime(seconds)}
+        </div>
+      </div>
+
       <div className="container relative z-10 px-4 py-20 mx-auto text-center">
         <h1 className="mb-6 text-5xl font-bold text-primary-foreground md:text-6xl lg:text-7xl">
           Neighbor 911™
