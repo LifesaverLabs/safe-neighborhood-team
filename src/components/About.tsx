@@ -65,7 +65,7 @@ const About = () => {
 
           <div className="flex flex-col gap-4 sm:flex-row justify-center">
             <a
-              href="https://github.com"
+              href="https://github.com/LifesaverLabs/Neighbor911/blob/main/docs/ARCHITECTURE.md"
               target="_blank"
               rel="noopener noreferrer"
               className="inline-flex items-center justify-center gap-2 px-6 py-3 text-base font-medium text-primary-foreground bg-primary rounded-lg hover:opacity-90 transition-opacity"
@@ -74,7 +74,7 @@ const About = () => {
               <ExternalLink className="w-4 h-4" />
             </a>
             <a
-              href="https://github.com"
+              href="https://github.com/LifesaverLabs/Neighbor911"
               target="_blank"
               rel="noopener noreferrer"
               className="inline-flex items-center justify-center gap-2 px-6 py-3 text-base font-medium text-foreground bg-muted rounded-lg hover:bg-muted/80 transition-colors"

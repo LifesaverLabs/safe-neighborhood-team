@@ -33,7 +33,7 @@ const Hero = () => {
             className="text-lg bg-background/10 border-primary-foreground/30 text-primary-foreground hover:bg-background/20"
             asChild
           >
-            <a href="https://github.com" target="_blank" rel="noopener noreferrer">
+            <a href="https://github.com/LifesaverLabs/Neighbor911" target="_blank" rel="noopener noreferrer">
               View on GitHub
             </a>
           </Button>
