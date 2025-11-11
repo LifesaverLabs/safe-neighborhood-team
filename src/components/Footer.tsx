@@ -50,7 +50,7 @@ const Footer = () => {
                 </a>
               </li>
               <li>
-                <a href="mailto:nobody@lifesaverlabs.org?subject=[FUNDING]" className="hover:text-background transition-colors">
+                <a href="mailto:funding@lifesaverlabs.org" className="hover:text-background transition-colors">
                   Funding Inquiries
                 </a>
               </li>
