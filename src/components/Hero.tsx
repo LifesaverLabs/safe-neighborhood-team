@@ -1,9 +1,29 @@
 import { Button } from "@/components/ui/button";
-import heroImage from "@/assets/hero-emergency-response.jpg";
-import { useEffect, useState } from "react";
+import { Carousel, CarouselContent, CarouselItem, CarouselNext, CarouselPrevious } from "@/components/ui/carousel";
+import Autoplay from "embla-carousel-autoplay";
+import heroEmergency from "@/assets/hero-emergency-response.jpg";
+import heroLostDog from "@/assets/hero-lost-dog.jpg";
+import heroConsent from "@/assets/hero-consent-response.jpg";
+import { useEffect, useState, useRef } from "react";
 
 const Hero = () => {
   const [seconds, setSeconds] = useState(90);
+  const plugin = useRef(Autoplay({ delay: 5000, stopOnInteraction: true }));
+
+  const heroScenarios = [
+    {
+      image: heroEmergency,
+      alt: "Neighbors responding to medical emergency - woman at door, man performing CPR"
+    },
+    {
+      image: heroLostDog,
+      alt: "Neighbors working together to safely catch a lost dog"
+    },
+    {
+      image: heroConsent,
+      alt: "Neighbor responding to consent emergency safeword call"
+    }
+  ];
 
   useEffect(() => {
     if (seconds <= 0) return;
@@ -27,14 +47,29 @@ const Hero = () => {
 
   return (
     <section className="relative min-h-[600px] flex items-center justify-center overflow-hidden">
-      <div className="absolute inset-0">
-        <img 
-          src={heroImage} 
-          alt="Neighbors responding to emergency - one knocking urgently on door, another administering CPR" 
-          className="w-full h-full object-cover"
-        />
-        <div className="absolute inset-0 bg-gradient-to-r from-black/70 via-black/50 to-transparent" />
-      </div>
+      <Carousel 
+        plugins={[plugin.current]}
+        className="w-full h-full absolute inset-0"
+        onMouseEnter={plugin.current.stop}
+        onMouseLeave={plugin.current.reset}
+      >
+        <CarouselContent>
+          {heroScenarios.map((scenario, index) => (
+            <CarouselItem key={index}>
+              <div className="relative min-h-[600px] flex items-center justify-center">
+                <img 
+                  src={scenario.image} 
+                  alt={scenario.alt}
+                  className="w-full h-full object-cover absolute inset-0"
+                />
+                <div className="absolute inset-0 bg-gradient-to-r from-black/70 via-black/50 to-transparent" />
+              </div>
+            </CarouselItem>
+          ))}
+        </CarouselContent>
+        <CarouselPrevious className="left-4 z-20" />
+        <CarouselNext className="right-4 z-20" />
+      </Carousel>
       
       {/* Countdown Timer */}
       <div className="absolute top-8 right-8 z-20 bg-primary text-primary-foreground px-6 py-4 rounded-lg shadow-lg border-2 border-primary-foreground/20 animate-fade-in">
