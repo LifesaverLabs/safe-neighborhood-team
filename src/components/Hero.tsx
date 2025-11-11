@@ -21,12 +21,12 @@ const Hero = () => {
       alt: "Neighbors working together to safely catch a lost dog"
     },
     {
-      image: heroConsent,
-      alt: "Neighbor responding to consent emergency safeword call"
-    },
-    {
       image: heroApartment,
       alt: "Urban apartment neighbors responding to emergency in hallway"
+    },
+    {
+      image: heroConsent,
+      alt: "Neighbor responding to consent emergency safeword call"
     }
   ];
 
