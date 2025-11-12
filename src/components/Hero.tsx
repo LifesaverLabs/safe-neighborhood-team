@@ -92,8 +92,8 @@ const Hero = () => {
         <CarouselNext className="right-4 z-20" />
       </Carousel>
       
-      {/* Response Time Counter - Desktop: top-right absolute, Mobile: hidden */}
-      <div className="hidden md:block absolute top-8 right-8 z-20 bg-background/90 backdrop-blur-sm px-4 py-3 rounded-lg shadow-lg border-2 border-border animate-fade-in">
+      {/* Response Time Counter - Large screens: top-right absolute, Mobile/Tablet: hidden */}
+      <div className="hidden lg:block absolute top-8 right-8 z-20 bg-background/90 backdrop-blur-sm px-4 py-3 rounded-lg shadow-lg border-2 border-border animate-fade-in">
         <div className={`mb-2 transition-colors duration-500 ${neighborSeconds >= 90 ? 'text-green-600' : 'text-foreground'}`}>
           <div className="text-xs font-medium mb-0.5 opacity-90">Neighbor Response Time*</div>
           <div className="text-3xl font-bold tabular-nums tracking-tight">
@@ -122,8 +122,8 @@ const Hero = () => {
           An open source platform connecting neighbors to respond to emergencies faster than traditional services
         </p>
         
-        {/* Response Time Counter - Mobile: below text, Desktop: hidden */}
-        <div className="md:hidden mb-8 inline-block bg-background/90 backdrop-blur-sm px-4 py-3 rounded-lg shadow-lg border-2 border-border animate-fade-in">
+        {/* Response Time Counter - Mobile/Tablet: below text, Large screens: hidden */}
+        <div className="lg:hidden mb-8 inline-block bg-background/90 backdrop-blur-sm px-4 py-3 rounded-lg shadow-lg border-2 border-border animate-fade-in">
           <div className={`mb-2 transition-colors duration-500 ${neighborSeconds >= 90 ? 'text-green-600' : 'text-foreground'}`}>
             <div className="text-xs font-medium mb-0.5 opacity-90">Neighbor Response Time*</div>
             <div className="text-3xl font-bold tabular-nums tracking-tight">
