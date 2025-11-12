@@ -8,8 +8,8 @@ import heroWellness from "@/assets/hero-wellness-check.jpg";
 import { useEffect, useState, useRef } from "react";
 
 const Hero = () => {
-  const [seconds, setSeconds] = useState(0);
-  const [phase, setPhase] = useState<'neighbor' | 'ems'>('neighbor');
+  const [neighborSeconds, setNeighborSeconds] = useState(0);
+  const [emsSeconds, setEmsSeconds] = useState(0);
   const plugin = useRef(Autoplay({ delay: 5000, stopOnInteraction: true }));
 
   const heroScenarios = [
@@ -33,23 +33,21 @@ const Hero = () => {
 
   useEffect(() => {
     const timer = setInterval(() => {
-      setSeconds((prev) => {
-        // Neighbor phase: 0 to 90 seconds
-        if (phase === 'neighbor' && prev < 90) {
+      setNeighborSeconds((prev) => {
+        if (prev < 90) {
           return prev + 1;
         }
-        // Switch to EMS phase
-        if (phase === 'neighbor' && prev >= 90) {
-          setPhase('ems');
-          return 0;
-        }
-        // EMS phase: 0 to 480 seconds (8 minutes)
-        if (phase === 'ems' && prev < 480) {
+        return prev;
+      });
+      
+      setEmsSeconds((prev) => {
+        // EMS starts counting after neighbor reaches 90
+        if (neighborSeconds >= 90 && prev < 480) {
           return prev + 1;
         }
-        // Loop back to neighbor phase
-        if (phase === 'ems' && prev >= 480) {
-          setPhase('neighbor');
+        // Reset both when EMS reaches 480
+        if (prev >= 480) {
+          setNeighborSeconds(0);
           return 0;
         }
         return prev;
@@ -57,16 +55,12 @@ const Hero = () => {
     }, 1000);
 
     return () => clearInterval(timer);
-  }, [phase]);
+  }, [neighborSeconds]);
 
   const formatTime = (secs: number) => {
     const mins = Math.floor(secs / 60);
     const remainingSecs = secs % 60;
     return `${mins}:${remainingSecs.toString().padStart(2, '0')}`;
-  };
-
-  const getLabel = () => {
-    return phase === 'neighbor' ? 'Neighbor Response Time' : 'EMS Response Time';
   };
 
   const scrollToGetInvolved = () => {
@@ -101,9 +95,17 @@ const Hero = () => {
       
       {/* Response Time Counter */}
       <div className="absolute top-8 right-8 z-20 bg-primary text-primary-foreground px-6 py-4 rounded-lg shadow-lg border-2 border-primary-foreground/20 animate-fade-in">
-        <div className="text-sm font-medium mb-1 opacity-90">{getLabel()}</div>
-        <div className="text-5xl font-bold tabular-nums tracking-tight">
-          {formatTime(seconds)}
+        <div className="mb-4">
+          <div className="text-sm font-medium mb-1 opacity-90">Neighbor Response Time</div>
+          <div className="text-4xl font-bold tabular-nums tracking-tight">
+            {formatTime(neighborSeconds)}
+          </div>
+        </div>
+        <div className="border-t border-primary-foreground/20 pt-4">
+          <div className="text-sm font-medium mb-1 opacity-90">EMS Response Time</div>
+          <div className="text-4xl font-bold tabular-nums tracking-tight">
+            {formatTime(emsSeconds)}
+          </div>
         </div>
       </div>
 
