@@ -100,7 +100,7 @@ const Hero = () => {
             {formatTime(neighborSeconds)}
           </div>
         </div>
-        <div className={`border-t pt-4 transition-colors duration-500 ${emsSeconds >= 540 ? 'text-red-600 border-red-200' : 'text-foreground border-border'}`}>
+        <div className={`border-t pt-4 transition-colors duration-500 ${emsSeconds > 90 ? 'text-red-600 border-red-200' : 'text-foreground border-border'}`}>
           <div className="text-sm font-medium mb-1 opacity-90">EMS Response Time</div>
           <div className="text-4xl font-bold tabular-nums tracking-tight">
             {formatTime(emsSeconds)}
