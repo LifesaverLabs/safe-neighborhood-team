@@ -1,73 +1,126 @@
-# Welcome to your Lovable project
+# Neighbor 911™ - Community Emergency Response Platform
 
-## Project info
+## About
 
-**URL**: https://lovable.dev/projects/19495dd1-d81e-4d75-9db9-340ae3a3f8b9
+Neighbor 911™ is an open-source platform that connects neighbors for rapid emergency response. Built by Lifesaver Labs Public Benefit Corporation, this platform enables communities to organize modern-day minutemen & minutewomen who can respond to emergencies in minutes, not hours.
 
-## How can I edit this code?
+When seconds count, your neighbors are closer than emergency services. This platform helps coordinate community response for medical emergencies, lost pets, wellness checks, and other urgent situations where immediate local assistance can make a critical difference.
 
-There are several ways of editing your application.
+## Features
 
-**Use Lovable**
+- **Rapid Response Network**: Connect with trained neighbors who can respond within minutes
+- **Emergency Alerts**: Send and receive location-based emergency notifications
+- **Community Coordination**: Organize and train local response teams
+- **Multi-scenario Support**: Handle medical emergencies, missing persons/pets, wellness checks, and more
+- **Privacy-First Design**: Secure, opt-in system that respects user privacy
 
-Simply visit the [Lovable Project](https://lovable.dev/projects/19495dd1-d81e-4d75-9db9-340ae3a3f8b9) and start prompting.
+## Technology Stack
 
-Changes made via Lovable will be committed automatically to this repo.
+This project is built with modern web technologies:
 
-**Use your preferred IDE**
+- **Vite** - Fast build tool and development server
+- **TypeScript** - Type-safe JavaScript
+- **React** - Component-based UI framework
+- **shadcn/ui** - Accessible and customizable UI components
+- **Tailwind CSS** - Utility-first CSS framework
+- **React Router** - Client-side routing
+- **React Query** - Server state management
 
-If you want to work locally using your own IDE, you can clone this repo and push changes. Pushed changes will also be reflected in Lovable.
+## Getting Started
 
-The only requirement is having Node.js & npm installed - [install with nvm](https://github.com/nvm-sh/nvm#installing-and-updating)
+### Prerequisites
 
-Follow these steps:
+- Node.js & npm installed - [install with nvm](https://github.com/nvm-sh/nvm#installing-and-updating)
 
-```sh
-# Step 1: Clone the repository using the project's Git URL.
-git clone <YOUR_GIT_URL>
+### Installation
 
-# Step 2: Navigate to the project directory.
-cd <YOUR_PROJECT_NAME>
+```bash
+# Clone the repository
+git clone <repository-url>
+cd safe-neighborhood-team
 
-# Step 3: Install the necessary dependencies.
-npm i
+# Install dependencies
+npm install
 
-# Step 4: Start the development server with auto-reloading and an instant preview.
+# Start development server
 npm run dev
 ```
 
-**Edit a file directly in GitHub**
+The application will be available at `http://localhost:5173`
 
-- Navigate to the desired file(s).
-- Click the "Edit" button (pencil icon) at the top right of the file view.
-- Make your changes and commit the changes.
+## Available Scripts
 
-**Use GitHub Codespaces**
+- `npm run dev` - Start development server with hot reload
+- `npm run build` - Build for production
+- `npm run build:dev` - Build for development environment
+- `npm run preview` - Preview production build locally
+- `npm run lint` - Run ESLint for code quality
 
-- Navigate to the main page of your repository.
-- Click on the "Code" button (green button) near the top right.
-- Select the "Codespaces" tab.
-- Click on "New codespace" to launch a new Codespace environment.
-- Edit files directly within the Codespace and commit and push your changes once you're done.
+## Project Structure
 
-## What technologies are used for this project?
+```
+safe-neighborhood-team/
+├── src/
+│   ├── components/     # React components
+│   ├── pages/         # Page components
+│   ├── lib/           # Utility functions
+│   ├── hooks/         # Custom React hooks
+│   └── assets/        # Images and static assets
+├── public/            # Public assets
+└── index.html         # Entry HTML file
+```
 
-This project is built with:
+## Contributing
 
-- Vite
-- TypeScript
-- React
-- shadcn-ui
-- Tailwind CSS
+We welcome contributions from the community! Whether you're fixing bugs, adding features, or improving documentation, your help makes this platform better for everyone.
 
-## How can I deploy this project?
+### How to Contribute
 
-Simply open [Lovable](https://lovable.dev/projects/19495dd1-d81e-4d75-9db9-340ae3a3f8b9) and click on Share -> Publish.
+1. Fork the repository
+2. Create a feature branch (`git checkout -b feature/amazing-feature`)
+3. Commit your changes (`git commit -m 'Add amazing feature'`)
+4. Push to the branch (`git push origin feature/amazing-feature`)
+5. Open a Pull Request
 
-## Can I connect a custom domain to my Lovable project?
+## Deployment
 
-Yes, you can!
+This project can be deployed to any static hosting service:
 
-To connect a domain, navigate to Project > Settings > Domains and click Connect Domain.
+### Build for Production
 
-Read more here: [Setting up a custom domain](https://docs.lovable.dev/features/custom-domain#custom-domain)
+```bash
+npm run build
+```
+
+The built files will be in the `dist/` directory, ready to be deployed.
+
+### Hosting Options
+
+- **Vercel**: Connect your GitHub repository for automatic deployments
+- **Netlify**: Drag and drop the `dist` folder or connect GitHub
+- **GitHub Pages**: Use GitHub Actions to deploy automatically
+- **Self-hosted**: Serve the `dist` folder with any web server
+
+## Security
+
+This platform handles sensitive emergency response coordination. Please report security vulnerabilities responsibly by emailing security@lifesaverlabs.org.
+
+## License
+
+This project is open source and available under the [MIT License](LICENSE).
+
+## Contact
+
+- **Project Website**: [neighbor911.com](https://neighbor911.com)
+- **Organization**: Lifesaver Labs Public Benefit Corporation
+- **GitHub**: [github.com/lifesaverlabs/neighbor911](https://github.com/lifesaverlabs/neighbor911)
+
+## Acknowledgments
+
+- All the brave neighbors who step up to help in emergencies
+- Emergency responders who inspire this community-based approach
+- Open source contributors who make this platform possible
+
+---
+
+**Remember**: When seconds count, neighbors are minutes away. Together, we can save lives.
