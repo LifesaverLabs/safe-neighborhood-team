@@ -95,16 +95,19 @@ const Hero = () => {
       {/* Response Time Counter */}
       <div className="absolute top-8 right-8 z-20 bg-background/90 backdrop-blur-sm px-6 py-4 rounded-lg shadow-lg border-2 border-border animate-fade-in">
         <div className={`mb-4 transition-colors duration-500 ${neighborSeconds >= 90 ? 'text-green-600' : 'text-foreground'}`}>
-          <div className="text-sm font-medium mb-1 opacity-90">Neighbor Response Time</div>
+          <div className="text-sm font-medium mb-1 opacity-90">Neighbor Response Time*</div>
           <div className="text-4xl font-bold tabular-nums tracking-tight">
             {formatTime(neighborSeconds)}
           </div>
         </div>
-        <div className={`border-t pt-4 transition-colors duration-500 ${emsSeconds > 90 ? 'text-red-600 border-red-200' : 'text-foreground border-border'}`}>
-          <div className="text-sm font-medium mb-1 opacity-90">EMS Response Time</div>
+        <div className={`border-t pt-4 mb-3 transition-colors duration-500 ${emsSeconds > 90 ? 'text-red-600 border-red-200' : 'text-foreground border-border'}`}>
+          <div className="text-sm font-medium mb-1 opacity-90">EMS Avg Response Time</div>
           <div className="text-4xl font-bold tabular-nums tracking-tight">
             {formatTime(emsSeconds)}
           </div>
+        </div>
+        <div className="text-xs opacity-70 text-foreground border-t border-border pt-2">
+          *Ideal conditions at service maturity
         </div>
       </div>
 
