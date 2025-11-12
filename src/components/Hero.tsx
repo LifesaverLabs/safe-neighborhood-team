@@ -8,7 +8,8 @@ import heroWellness from "@/assets/hero-wellness-check.jpg";
 import { useEffect, useState, useRef } from "react";
 
 const Hero = () => {
-  const [seconds, setSeconds] = useState(90);
+  const [seconds, setSeconds] = useState(0);
+  const [phase, setPhase] = useState<'neighbor' | 'ems'>('neighbor');
   const plugin = useRef(Autoplay({ delay: 5000, stopOnInteraction: true }));
 
   const heroScenarios = [
@@ -31,19 +32,41 @@ const Hero = () => {
   ];
 
   useEffect(() => {
-    if (seconds <= 0) return;
-    
     const timer = setInterval(() => {
-      setSeconds((prev) => (prev > 0 ? prev - 1 : 0));
+      setSeconds((prev) => {
+        // Neighbor phase: 0 to 90 seconds
+        if (phase === 'neighbor' && prev < 90) {
+          return prev + 1;
+        }
+        // Switch to EMS phase
+        if (phase === 'neighbor' && prev >= 90) {
+          setPhase('ems');
+          return 0;
+        }
+        // EMS phase: 0 to 480 seconds (8 minutes)
+        if (phase === 'ems' && prev < 480) {
+          return prev + 1;
+        }
+        // Loop back to neighbor phase
+        if (phase === 'ems' && prev >= 480) {
+          setPhase('neighbor');
+          return 0;
+        }
+        return prev;
+      });
     }, 1000);
 
     return () => clearInterval(timer);
-  }, [seconds]);
+  }, [phase]);
 
   const formatTime = (secs: number) => {
     const mins = Math.floor(secs / 60);
     const remainingSecs = secs % 60;
     return `${mins}:${remainingSecs.toString().padStart(2, '0')}`;
+  };
+
+  const getLabel = () => {
+    return phase === 'neighbor' ? 'Neighbor Response Time' : 'EMS Response Time';
   };
 
   const scrollToGetInvolved = () => {
@@ -76,9 +99,9 @@ const Hero = () => {
         <CarouselNext className="right-4 z-20" />
       </Carousel>
       
-      {/* Countdown Timer */}
+      {/* Response Time Counter */}
       <div className="absolute top-8 right-8 z-20 bg-primary text-primary-foreground px-6 py-4 rounded-lg shadow-lg border-2 border-primary-foreground/20 animate-fade-in">
-        <div className="text-sm font-medium mb-1 opacity-90">Response Time</div>
+        <div className="text-sm font-medium mb-1 opacity-90">{getLabel()}</div>
         <div className="text-5xl font-bold tabular-nums tracking-tight">
           {formatTime(seconds)}
         </div>
