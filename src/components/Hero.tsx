@@ -153,7 +153,7 @@ const Hero = () => {
           <Button 
             size="lg" 
             variant="outline"
-            className="text-lg bg-background/30 backdrop-blur-sm border-primary-foreground/50 text-primary-foreground hover:bg-background/40"
+            className="text-lg bg-secondary md:bg-background/30 md:backdrop-blur-sm border-primary-foreground/50 text-primary-foreground hover:bg-secondary/90 md:hover:bg-background/40"
             asChild
           >
             <a href="https://github.com/LifesaverLabs/Neighbor911" target="_blank" rel="noopener noreferrer">
