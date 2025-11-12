@@ -41,12 +41,11 @@ const Hero = () => {
       });
       
       setEmsSeconds((prev) => {
-        // EMS starts counting after neighbor reaches 90
-        if (neighborSeconds >= 90 && prev < 480) {
+        if (prev < 540) { // 9 minutes = 540 seconds
           return prev + 1;
         }
-        // Reset both when EMS reaches 480
-        if (prev >= 480) {
+        // Reset both when EMS reaches 540
+        if (prev >= 540) {
           setNeighborSeconds(0);
           return 0;
         }
@@ -55,7 +54,7 @@ const Hero = () => {
     }, 1000);
 
     return () => clearInterval(timer);
-  }, [neighborSeconds]);
+  }, []);
 
   const formatTime = (secs: number) => {
     const mins = Math.floor(secs / 60);
@@ -94,14 +93,14 @@ const Hero = () => {
       </Carousel>
       
       {/* Response Time Counter */}
-      <div className="absolute top-8 right-8 z-20 bg-primary text-primary-foreground px-6 py-4 rounded-lg shadow-lg border-2 border-primary-foreground/20 animate-fade-in">
-        <div className="mb-4">
+      <div className="absolute top-8 right-8 z-20 bg-background/90 backdrop-blur-sm px-6 py-4 rounded-lg shadow-lg border-2 border-border animate-fade-in">
+        <div className={`mb-4 transition-colors duration-500 ${neighborSeconds >= 90 ? 'text-green-600' : 'text-foreground'}`}>
           <div className="text-sm font-medium mb-1 opacity-90">Neighbor Response Time</div>
           <div className="text-4xl font-bold tabular-nums tracking-tight">
             {formatTime(neighborSeconds)}
           </div>
         </div>
-        <div className="border-t border-primary-foreground/20 pt-4">
+        <div className={`border-t pt-4 transition-colors duration-500 ${emsSeconds >= 540 ? 'text-red-600 border-red-200' : 'text-foreground border-border'}`}>
           <div className="text-sm font-medium mb-1 opacity-90">EMS Response Time</div>
           <div className="text-4xl font-bold tabular-nums tracking-tight">
             {formatTime(emsSeconds)}
