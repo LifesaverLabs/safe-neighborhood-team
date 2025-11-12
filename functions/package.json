@@ -1,0 +1,17 @@
+{
+  "name": "neighbor911-functions",
+  "version": "1.0.0",
+  "description": "Cloud Functions for Neighbor 911 landing page",
+  "main": "index.js",
+  "scripts": {
+    "deploy": "gcloud functions deploy submitInterest --runtime nodejs20 --trigger-http --allow-unauthenticated --region us-central1 --set-env-vars RESEND_API_KEY=$RESEND_API_KEY,FROM_EMAIL=$FROM_EMAIL,TO_EMAIL=$TO_EMAIL"
+  },
+  "dependencies": {
+    "@google-cloud/functions-framework": "^3.3.0",
+    "resend": "^3.0.0",
+    "cors": "^2.8.5"
+  },
+  "devDependencies": {
+    "@types/node": "^20.0.0"
+  }
+}

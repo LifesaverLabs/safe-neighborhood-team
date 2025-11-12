@@ -28,7 +28,9 @@ const GetInvolved = () => {
     message: ""
   });
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const [isSubmitting, setIsSubmitting] = useState(false);
+
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     
     // Basic validation
@@ -41,14 +43,50 @@ const GetInvolved = () => {
       return;
     }
 
-    // In a real implementation, this would submit to a backend
-    toast({
-      title: "Thank you for your interest!",
-      description: "We'll be in touch soon to discuss how you can contribute to Neighbor 911.",
-    });
+    setIsSubmitting(true);
 
-    // Reset form
-    setFormData({ name: "", email: "", role: "", message: "" });
+    try {
+      // Determine the API endpoint based on environment
+      const apiUrl = import.meta.env.VITE_CLOUD_FUNCTION_URL || 
+        (import.meta.env.DEV 
+          ? 'http://localhost:8081' // Local Functions Framework for development
+          : 'https://us-central1-neighbor911usa-landing-page.cloudfunctions.net/submitInterest');
+
+      const response = await fetch(apiUrl, {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(formData),
+      });
+
+      const result = await response.json();
+
+      if (response.ok) {
+        toast({
+          title: "Thank you for your interest!",
+          description: result.message || "We'll be in touch soon to discuss how you can contribute to Neighbor 911.",
+        });
+
+        // Reset form
+        setFormData({ name: "", email: "", role: "", message: "" });
+      } else {
+        toast({
+          title: "Submission failed",
+          description: result.error || "Please try again later.",
+          variant: "destructive"
+        });
+      }
+    } catch (error) {
+      console.error('Submission error:', error);
+      toast({
+        title: "Network error",
+        description: "Unable to submit form. Please check your connection and try again.",
+        variant: "destructive"
+      });
+    } finally {
+      setIsSubmitting(false);
+    }
   };
 
   return (
@@ -156,8 +194,8 @@ const GetInvolved = () => {
                   />
                 </div>
 
-                <Button type="submit" className="w-full">
-                  Submit
+                <Button type="submit" className="w-full" disabled={isSubmitting}>
+                  {isSubmitting ? "Submitting..." : "Submit"}
                 </Button>
               </form>
             </CardContent>

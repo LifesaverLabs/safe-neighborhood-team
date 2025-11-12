@@ -1,0 +1,4 @@
+constraint: constraints/iam.allowedPolicyMemberDomains
+listPolicy:
+  inheritFromParent: false
+  allValues: ALLOW

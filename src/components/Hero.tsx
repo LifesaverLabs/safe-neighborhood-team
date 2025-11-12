@@ -67,7 +67,7 @@ const Hero = () => {
   };
 
   return (
-    <section className="relative min-h-[600px] flex items-center justify-center overflow-hidden">
+    <section className="relative min-h-[600px] lg:min-h-[700px] flex items-center justify-center overflow-hidden">
       <Carousel 
         plugins={[plugin.current]}
         className="w-full h-full absolute inset-0"
@@ -77,11 +77,11 @@ const Hero = () => {
         <CarouselContent>
           {heroScenarios.map((scenario, index) => (
             <CarouselItem key={index}>
-              <div className="relative min-h-[600px] flex items-center justify-center">
+              <div className="relative min-h-[600px] lg:min-h-[700px] flex items-center justify-center">
                 <img 
                   src={scenario.image} 
                   alt={scenario.alt}
-                  className="w-full h-full object-cover absolute inset-0"
+                  className="w-full h-full object-contain lg:object-cover absolute inset-0 bg-black"
                 />
                 <div className="absolute inset-0 bg-gradient-to-r from-black/70 via-black/50 to-transparent" />
               </div>
