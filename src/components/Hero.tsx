@@ -2,6 +2,7 @@ import { Button } from "@/components/ui/button";
 import { Carousel, CarouselContent, CarouselItem, CarouselNext, CarouselPrevious } from "@/components/ui/carousel";
 import Autoplay from "embla-carousel-autoplay";
 import heroEmergency from "@/assets/hero-emergency-collage.jpg";
+import heroConsentWellness from "@/assets/hero-consent-wellness.jpg";
 import heroLostDog from "@/assets/hero-lost-dog.jpg";
 import heroApartment from "@/assets/hero-apartment-emergency.jpg";
 import heroWellness from "@/assets/hero-wellness-check.jpg";
@@ -18,6 +19,12 @@ const Hero = () => {
       alt: "Collage of emergency situations: CPR, wellness checks, overdose response, active bystander support, AED delivery, and pet rescue",
       title: "Emergency Response",
       subtitle: "CPR • Overdose • Wellness Checks • Crisis Support"
+    },
+    {
+      image: heroConsentWellness,
+      alt: "Neighbor conducting supportive wellness check for consent conflict situation",
+      title: "Consent Conflict Wellness Check",
+      subtitle: "Supporting neighbors in sensitive domestic situations"
     },
     {
       image: heroLostDog,
