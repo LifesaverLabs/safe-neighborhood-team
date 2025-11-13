@@ -15,19 +15,27 @@ const Hero = () => {
   const heroScenarios = [
     {
       image: heroEmergency,
-      alt: "Collage of emergency situations: CPR, wellness checks, overdose response, active bystander support, AED delivery, and pet rescue"
+      alt: "Collage of emergency situations: CPR, wellness checks, overdose response, active bystander support, AED delivery, and pet rescue",
+      title: "Emergency Response",
+      subtitle: "CPR • Overdose • Wellness Checks • Crisis Support"
     },
     {
       image: heroLostDog,
-      alt: "Neighbors working together to safely catch a lost dog"
+      alt: "Neighbors working together to safely catch a lost dog",
+      title: "Lost Pet Recovery",
+      subtitle: "Community search and safe reunification"
     },
     {
       image: heroApartment,
-      alt: "Urban apartment neighbors responding to emergency in hallway"
+      alt: "Urban apartment neighbors responding to emergency in hallway",
+      title: "Apartment Emergency Response",
+      subtitle: "Immediate neighbor assistance in residential buildings"
     },
     {
       image: heroWellness,
-      alt: "Police officer and neighbor conducting wellness check together"
+      alt: "Police officer and neighbor conducting wellness check together",
+      title: "Wellness Check Support",
+      subtitle: "Checking on neighbors who may need help"
     }
   ];
 
@@ -84,6 +92,14 @@ const Hero = () => {
                   className="w-full h-full object-contain lg:object-cover absolute inset-0 bg-black"
                 />
                 <div className="absolute inset-0 bg-gradient-to-r from-black/70 via-black/50 to-transparent" />
+                <div className="absolute top-8 left-8 z-10 text-left">
+                  <h2 className="text-3xl md:text-4xl font-bold text-primary-foreground mb-2">
+                    {scenario.title}
+                  </h2>
+                  <p className="text-base md:text-lg text-primary-foreground/80 max-w-md">
+                    {scenario.subtitle}
+                  </p>
+                </div>
               </div>
             </CarouselItem>
           ))}
