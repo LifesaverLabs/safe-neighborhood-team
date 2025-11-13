@@ -1,4 +1,3 @@
-const functions = require('@google-cloud/functions-framework');
 const { Resend } = require('resend');
 const cors = require('cors');
 
@@ -12,7 +11,8 @@ const corsMiddleware = cors({
 // Initialize Resend with API key from environment variable
 const resend = new Resend(process.env.RESEND_API_KEY);
 
-functions.http('submitInterest', async (req, res) => {
+// Export function for Gen2 deployment (no functions.http wrapper needed)
+exports.submitInterest = async (req, res) => {
   // Handle CORS
   corsMiddleware(req, res, async () => {
     // Handle preflight requests
@@ -176,4 +176,4 @@ Submitted from the Neighbor 911 landing page
       });
     }
   });
-});
+};
