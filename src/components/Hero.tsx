@@ -1,7 +1,7 @@
 import { Button } from "@/components/ui/button";
 import { Carousel, CarouselContent, CarouselItem, CarouselNext, CarouselPrevious } from "@/components/ui/carousel";
 import Autoplay from "embla-carousel-autoplay";
-import heroEmergency from "@/assets/hero-emergency-response.jpg";
+import heroEmergency from "@/assets/hero-emergency-collage.jpg";
 import heroLostDog from "@/assets/hero-lost-dog.jpg";
 import heroApartment from "@/assets/hero-apartment-emergency.jpg";
 import heroWellness from "@/assets/hero-wellness-check.jpg";
@@ -15,7 +15,7 @@ const Hero = () => {
   const heroScenarios = [
     {
       image: heroEmergency,
-      alt: "Neighbors responding to medical emergency - woman at door, man performing CPR"
+      alt: "Collage of emergency situations: CPR, wellness checks, overdose response, active bystander support, AED delivery, and pet rescue"
     },
     {
       image: heroLostDog,
