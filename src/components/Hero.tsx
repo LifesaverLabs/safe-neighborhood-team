@@ -24,7 +24,7 @@ const Hero = () => {
       image: heroConsentWellness,
       alt: "Neighbor conducting supportive wellness check for consent conflict situation",
       title: "Consent Conflict Wellness Check",
-      subtitle: "Supporting neighbors in sensitive domestic situations"
+      subtitle: "Supporting neighbors in sensitive domestic situations with Safeword™"
     },
     {
       image: heroLostDog,
