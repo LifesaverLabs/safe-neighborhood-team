@@ -6,7 +6,8 @@ import { Label } from "@/components/ui/label";
 import { Textarea } from "@/components/ui/textarea";
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
 import { useToast } from "@/hooks/use-toast";
-import { Code, Palette, Users, Briefcase, Heart, DollarSign, GraduationCap, Lightbulb } from "lucide-react";
+import { Code, Palette, Users, Briefcase, Heart, DollarSign, GraduationCap, Lightbulb, MessageSquare, ExternalLink } from "lucide-react";
+import { Alert, AlertDescription, AlertTitle } from "@/components/ui/alert";
 
 const roles = [
   { value: "engineering", label: "Engineering", icon: Code },
@@ -92,7 +93,7 @@ const GetInvolved = () => {
   return (
     <section id="get-involved" className="py-20 bg-muted/50">
       <div className="container px-4 mx-auto">
-        <div className="mb-16 text-center">
+        <div className="mb-12 text-center">
           <h2 className="mb-4 text-4xl font-bold text-foreground">
             Help Build Neighbor 911™
           </h2>
@@ -100,6 +101,38 @@ const GetInvolved = () => {
             This is an open source project built by volunteers. We need help from people with diverse skills and backgrounds.
           </p>
         </div>
+
+        <Alert className="mb-12 max-w-4xl mx-auto border-primary/20 bg-primary/5">
+          <MessageSquare className="h-5 w-5 text-primary" />
+          <AlertTitle className="text-xl font-semibold mb-2">Join Our Community!</AlertTitle>
+          <AlertDescription className="text-base space-y-3">
+            <p>
+              Before contributing, please review the documentation above and join our communities to connect with other volunteers, ask questions, and stay updated on project developments.
+            </p>
+            <div className="flex flex-wrap gap-4 mt-4">
+              <a
+                href="https://www.reddit.com/r/neighbor911/"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center gap-2 px-4 py-2 rounded-md bg-primary text-primary-foreground hover:bg-primary/90 transition-colors font-medium"
+              >
+                <Users className="h-4 w-4" />
+                Join Reddit Community
+                <ExternalLink className="h-3 w-3" />
+              </a>
+              <a
+                href="https://discord.gg/wCeGKj9Khz"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center gap-2 px-4 py-2 rounded-md bg-primary text-primary-foreground hover:bg-primary/90 transition-colors font-medium"
+              >
+                <MessageSquare className="h-4 w-4" />
+                Join Discord Server
+                <ExternalLink className="h-3 w-3" />
+              </a>
+            </div>
+          </AlertDescription>
+        </Alert>
 
         <div className="grid gap-8 lg:grid-cols-2 max-w-5xl mx-auto">
           <div className="space-y-6">

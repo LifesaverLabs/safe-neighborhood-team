@@ -96,7 +96,7 @@ const Hero = () => {
                 <img 
                   src={scenario.image} 
                   alt={scenario.alt}
-                  className="w-full h-full object-contain lg:object-cover absolute inset-0 bg-black"
+                  className="w-full h-full object-contain absolute inset-0 bg-black"
                 />
                 <div className="absolute inset-0 bg-gradient-to-r from-black/70 via-black/50 to-transparent" />
                 <div className="absolute top-8 left-8 z-10 text-left">

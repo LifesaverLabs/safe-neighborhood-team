@@ -68,6 +68,12 @@ exports.submitInterest = async (req, res) => {
 
 ## Cloud Run
 
+### IMPORTANT: Standardized Naming Convention
+**ALWAYS use these names for consistency:**
+- **Docker Image Name**: `neighbor911us-website`
+- **Cloud Run Service Name**: `neighbor911us-website`
+- **Artifact Registry Repository**: `neighbor911` (existing)
+
 ### Container Requirements
 1. **PORT Binding**: Container must listen on PORT environment variable
 2. **Health Checks**: Must respond to HTTP requests within timeout
@@ -75,29 +81,35 @@ exports.submitInterest = async (req, res) => {
 
 ### Deployment Process
 ```bash
-# Build and push to Artifact Registry
-docker build --platform linux/amd64 -t REGION-docker.pkg.dev/PROJECT/REPO/IMAGE .
-docker push REGION-docker.pkg.dev/PROJECT/REPO/IMAGE
+# STANDARDIZED BUILD COMMAND - Always use these exact names
+docker build --platform linux/amd64 \
+  -t us-central1-docker.pkg.dev/neighbor911usa-landing-page/neighbor911/neighbor911us-website:latest \
+  -t us-central1-docker.pkg.dev/neighbor911usa-landing-page/neighbor911/neighbor911us-website:$(date +%Y%m%d-%H%M%S) .
 
-# Deploy to Cloud Run
-gcloud run deploy SERVICE_NAME \
-  --image=REGION-docker.pkg.dev/PROJECT/REPO/IMAGE \
-  --region=REGION \
-  --allow-unauthenticated
+# Push to Artifact Registry
+docker push us-central1-docker.pkg.dev/neighbor911usa-landing-page/neighbor911/neighbor911us-website:latest
+
+# STANDARDIZED DEPLOY COMMAND - Always use neighbor911us-website as service name
+gcloud run deploy neighbor911us-website \
+  --image=us-central1-docker.pkg.dev/neighbor911usa-landing-page/neighbor911/neighbor911us-website:latest \
+  --region=us-central1 \
+  --allow-unauthenticated \
+  --port=8080 \
+  --max-instances=100
 ```
 
 ### Domain Mapping
 ```bash
-# Create domain mapping
+# Create domain mapping - Always use neighbor911us-website service
 gcloud beta run domain-mappings create \
-  --service=SERVICE_NAME \
-  --domain=DOMAIN \
-  --region=REGION
+  --service=neighbor911us-website \
+  --domain=www.neighbor911.us \
+  --region=us-central1
 
-# Delete domain mapping
+# Delete domain mapping (if needed for updates)
 gcloud beta run domain-mappings delete \
-  --domain=DOMAIN \
-  --region=REGION
+  --domain=www.neighbor911.us \
+  --region=us-central1
 ```
 
 ## DNS & Domain Setup
@@ -153,5 +165,5 @@ gcloud beta run domain-mappings delete \
 
 ---
 
-*Last updated: November 12, 2025*
+*Last updated: November 16, 2024*
 *Next sections to add: GitHub Actions CI/CD, Monitoring & Logging, Security Best Practices*
