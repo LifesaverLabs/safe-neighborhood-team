@@ -10,7 +10,7 @@ import { useEffect, useState, useRef } from "react";
 
 const Hero = () => {
   const [neighborSeconds, setNeighborSeconds] = useState(0);
-  const [emsSeconds, setEmsSeconds] = useState(0);
+  const [proSeconds, setProSeconds] = useState(0);
   const plugin = useRef(Autoplay({ delay: 5000, stopOnInteraction: true }));
 
   const heroScenarios = [
@@ -55,7 +55,7 @@ const Hero = () => {
         return prev;
       });
       
-      setEmsSeconds((prev) => {
+      setProSeconds((prev) => {
         if (prev < 540) { // 9 minutes = 540 seconds
           return prev + 1;
         }
@@ -123,10 +123,10 @@ const Hero = () => {
             {formatTime(neighborSeconds)}
           </div>
         </div>
-        <div className={`border-t pt-2 mb-2 transition-colors duration-500 ${emsSeconds > 90 ? 'text-red-600 border-red-200' : 'text-foreground border-border'}`}>
+        <div className={`border-t pt-2 mb-2 transition-colors duration-500 ${proSeconds > 90 ? 'text-red-600 border-red-200' : 'text-foreground border-border'}`}>
           <div className="text-xs font-medium mb-0.5 opacity-90">EMS Avg Response Time</div>
           <div className="text-3xl font-bold tabular-nums tracking-tight">
-            {formatTime(emsSeconds)}
+            {formatTime(proSeconds)}
           </div>
         </div>
         <div className="text-[10px] opacity-70 text-foreground border-t border-border pt-1.5">
@@ -153,10 +153,10 @@ const Hero = () => {
               {formatTime(neighborSeconds)}
             </div>
           </div>
-          <div className={`border-t pt-2 mb-2 transition-colors duration-500 ${emsSeconds > 90 ? 'text-red-600 border-red-200' : 'text-foreground border-border'}`}>
-            <div className="text-xs font-medium mb-0.5 opacity-90">EMS Avg Response Time</div>
+          <div className={`border-t pt-2 mb-2 transition-colors duration-500 ${proSeconds > 90 ? 'text-red-600 border-red-200' : 'text-foreground border-border'}`}>
+            <div className="text-xs font-medium mb-0.5 opacity-90">Pro Avg Response Time</div>
             <div className="text-3xl font-bold tabular-nums tracking-tight">
-              {formatTime(emsSeconds)}
+              {formatTime(proSeconds)}
             </div>
           </div>
           <div className="text-[10px] opacity-70 text-foreground border-t border-border pt-1.5">
