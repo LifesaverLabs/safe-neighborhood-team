@@ -147,8 +147,8 @@ const Hero = () => {
         <h1 className="mb-4 sm:mb-6 text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-bold text-primary-foreground">
           {showNaybor ? "Naybor 911™" : "Neighbor 911™"}
         </h1>
-        <p className="mb-3 sm:mb-4 text-base sm:text-lg md:text-xl lg:text-2xl text-primary-foreground/90 max-w-3xl mx-auto px-2">
-          Community-based emergency response in minutes, not quarter-hours
+        <p className="mb-4 text-xl text-primary-foreground/90 md:text-2xl max-w-3xl mx-auto">
+          Emergency neighbor first first responders racing to you in density⁵ under 90 seconds to 3 minutes, not 6 - 10 minutes
         </p>
         <p className="mb-6 sm:mb-8 text-sm sm:text-base lg:text-lg text-primary-foreground/80 max-w-2xl mx-auto px-2">
           An open source platform connecting naybors to respond to emergencies faster than traditional services
