@@ -139,7 +139,7 @@ const Hero = () => {
           Neighbor 911™
         </h1>
         <p className="mb-4 text-xl text-primary-foreground/90 md:text-2xl max-w-3xl mx-auto">
-          Community-based emergency response in minutes, not quarter-hours
+          Emergency neighbor first first responders racing to you in under 90 seconds to 3 minutes, not 6 - 10 minutes
         </p>
         <p className="mb-8 text-lg text-primary-foreground/80 max-w-2xl mx-auto">
           An open source platform connecting neighbors to respond to emergencies faster than traditional services
