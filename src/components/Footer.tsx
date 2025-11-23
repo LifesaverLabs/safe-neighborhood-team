@@ -4,9 +4,9 @@ const Footer = () => {
       <div className="container px-4 mx-auto">
         <div className="grid gap-8 md:grid-cols-2 lg:grid-cols-4">
           <div>
-            <h3 className="mb-4 text-lg font-semibold">Neighbor 911™</h3>
+            <h3 className="mb-4 text-lg font-semibold">Naybor 911™</h3>
             <p className="text-sm text-background/80">
-              Community-based emergency response platform. Open source, volunteer-driven, saving lives one neighbor at a time.
+              Community-based emergency response platform. Open source, volunteer-driven, saving lives one naybor at a time.
             </p>
           </div>
           
@@ -66,7 +66,7 @@ const Footer = () => {
                 </a>
               </li>
               <li>
-                <span className="text-background/60">Trademark: Neighbor 911™</span>
+                <span className="text-background/60">Trademark: Naybor 911™</span>
               </li>
               <li>
                 <span className="text-background/60">Public Benefit Corporation</span>
@@ -78,7 +78,7 @@ const Footer = () => {
         <div className="pt-8 mt-8 border-t border-background/20 text-center text-sm text-background/80">
           <p>
             © {new Date().getFullYear()} Lifesaver Labs Public Benefit Corporation. 
-            Neighbor 911™ is a trademark. Code released under MIT License.
+            Naybor 911™ is a trademark. Code released under MIT License.
           </p>
         </div>
       </div>

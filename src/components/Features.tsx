@@ -5,17 +5,17 @@ const features = [
   {
     icon: Clock,
     title: "Rapid Response",
-    description: "Connect neighbors who can respond in seconds or minutes, not the 8-15 minutes typical for professional EMS."
+    description: "Connect naybors who can respond in seconds or minutes, not the 8-15 minutes typical for professional EMS."
   },
   {
     icon: Users,
     title: "Community-Powered",
-    description: "Anyone can help. From trained responders to neighbors willing to knock on a door or simply be present."
+    description: "Anyone can help. From trained responders to naybors willing to knock on a door or simply be present."
   },
   {
     icon: Shield,
     title: "Capability Matching",
-    description: "Intelligent dispatch matches emergencies with neighbors who have specific skills, equipment, or willingness to help."
+    description: "Intelligent dispatch matches emergencies with naybors who have specific skills, equipment, or willingness to help."
   },
   {
     icon: Code,
@@ -43,7 +43,7 @@ const Features = () => {
             Modern-Day Minutemen & Minutewomen
           </h2>
           <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
-            Building a network of neighbors ready to respond at a moment's notice—with skills, equipment, or simply their presence
+            Building a network of naybors ready to respond at a moment's notice—with skills, equipment, or simply their presence
           </p>
         </div>
         <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-3">

@@ -66,7 +66,7 @@ const GetInvolved = () => {
       if (response.ok) {
         toast({
           title: "Thank you for your interest!",
-          description: result.message || "We'll be in touch soon to discuss how you can contribute to Neighbor 911.",
+          description: result.message || "We'll be in touch soon to discuss how you can contribute to Naybor 911.",
         });
 
         // Reset form
@@ -95,7 +95,7 @@ const GetInvolved = () => {
       <div className="container px-4 mx-auto">
         <div className="mb-12 text-center">
           <h2 className="mb-4 text-4xl font-bold text-foreground">
-            Help Build Neighbor 911™
+            Help Build Naybor 911™
           </h2>
           <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
             This is an open source project built by volunteers. We need help from people with diverse skills and backgrounds.

@@ -11,6 +11,7 @@ import { useEffect, useState, useRef } from "react";
 const Hero = () => {
   const [neighborSeconds, setNeighborSeconds] = useState(0);
   const [emsSeconds, setEmsSeconds] = useState(0);
+  const [showNaybor, setShowNaybor] = useState(false);
   const plugin = useRef(Autoplay({ delay: 5000, stopOnInteraction: true }));
 
   const heroScenarios = [
@@ -22,27 +23,27 @@ const Hero = () => {
     },
     {
       image: heroConsentWellness,
-      alt: "Neighbor conducting supportive wellness check for consent conflict situation",
+      alt: "Naybor conducting supportive wellness check for consent conflict situation",
       title: "Consent Conflict Wellness Check",
-      subtitle: "Supporting neighbors in sensitive domestic situations with Safeword™"
+      subtitle: "Supporting naybors in sensitive domestic situations with Safeword™"
     },
     {
       image: heroLostDog,
-      alt: "Neighbors working together to safely catch a lost dog",
+      alt: "Naybors working together to safely catch a lost dog",
       title: "Lost Pet Recovery",
       subtitle: "Community search and safe reunification"
     },
     {
       image: heroApartment,
-      alt: "Urban apartment neighbors responding to emergency in hallway",
+      alt: "Urban apartment naybors responding to emergency in hallway",
       title: "Apartment Emergency Response",
-      subtitle: "Immediate neighbor assistance in residential buildings"
+      subtitle: "Immediate naybor assistance in residential buildings"
     },
     {
       image: heroWellness,
-      alt: "Police officer and neighbor conducting wellness check together",
+      alt: "Police officer and naybor conducting wellness check together",
       title: "Wellness Check Support",
-      subtitle: "Checking on neighbors who may need help"
+      subtitle: "Checking on naybors who may need help"
     }
   ];
 
@@ -69,6 +70,14 @@ const Hero = () => {
     }, 1000);
 
     return () => clearInterval(timer);
+  }, []);
+
+  useEffect(() => {
+    const titleTimer = setInterval(() => {
+      setShowNaybor((prev) => !prev);
+    }, 1000);
+
+    return () => clearInterval(titleTimer);
   }, []);
 
   const formatTime = (secs: number) => {
@@ -118,7 +127,7 @@ const Hero = () => {
       {/* Response Time Counter - Large screens: top-right absolute, Mobile/Tablet: hidden */}
       <div className="hidden lg:block absolute top-8 right-8 z-20 bg-background/90 backdrop-blur-sm px-4 py-3 rounded-lg shadow-lg border-2 border-border animate-fade-in">
         <div className={`mb-2 transition-colors duration-500 ${neighborSeconds >= 90 ? 'text-green-600' : 'text-foreground'}`}>
-          <div className="text-xs font-medium mb-0.5 opacity-90">Neighbor Response Time*</div>
+          <div className="text-xs font-medium mb-0.5 opacity-90">Naybor Response Time*</div>
           <div className="text-3xl font-bold tabular-nums tracking-tight">
             {formatTime(neighborSeconds)}
           </div>
@@ -136,19 +145,19 @@ const Hero = () => {
 
       <div className="container relative z-10 px-4 py-20 mx-auto text-center">
         <h1 className="mb-6 text-5xl font-bold text-primary-foreground md:text-6xl lg:text-7xl">
-          Neighbor 911™
+          {showNaybor ? "Naybor 911™" : "Neighbor 911™"}
         </h1>
         <p className="mb-4 text-xl text-primary-foreground/90 md:text-2xl max-w-3xl mx-auto">
           Community-based emergency response in minutes, not quarter-hours
         </p>
         <p className="mb-8 text-lg text-primary-foreground/80 max-w-2xl mx-auto">
-          An open source platform connecting neighbors to respond to emergencies faster than traditional services
+          An open source platform connecting naybors to respond to emergencies faster than traditional services
         </p>
         
         {/* Response Time Counter - Mobile/Tablet: below text, Large screens: hidden */}
         <div className="lg:hidden mb-8 inline-block bg-background/90 backdrop-blur-sm px-4 py-3 rounded-lg shadow-lg border-2 border-border animate-fade-in">
           <div className={`mb-2 transition-colors duration-500 ${neighborSeconds >= 90 ? 'text-green-600' : 'text-foreground'}`}>
-            <div className="text-xs font-medium mb-0.5 opacity-90">Neighbor Response Time*</div>
+            <div className="text-xs font-medium mb-0.5 opacity-90">Naybor Response Time*</div>
             <div className="text-3xl font-bold tabular-nums tracking-tight">
               {formatTime(neighborSeconds)}
             </div>
