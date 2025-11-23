@@ -75,7 +75,7 @@ const Hero = () => {
   useEffect(() => {
     const titleTimer = setInterval(() => {
       setShowNaybor((prev) => !prev);
-    }, 1000);
+    }, 2000);
 
     return () => clearInterval(titleTimer);
   }, []);
