@@ -80,6 +80,7 @@ const Footer = () => {
             © {new Date().getFullYear()} Lifesaver Labs Public Benefit Corporation. 
             Naybor 911™ is a trademark. Code released under MIT License.
           </p>
+          <p className="mt-2 text-background/60">v0.0.6</p>
         </div>
       </div>
     </footer>
