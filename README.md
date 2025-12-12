@@ -113,7 +113,7 @@ This project is open source and available under the [MIT License](LICENSE).
 
 - **Project Website**: [neighbor911.com](https://neighbor911.com)
 - **Organization**: Lifesaver Labs Public Benefit Corporation
-- **GitHub**: [github.com/lifesaverlabs/neighbor911](https://github.com/lifesaverlabs/neighbor911)
+- **GitHub**: [github.com/LifesaverLabs/NayborSOS](https://github.com/LifesaverLabs/NayborSOS)
 
 ## Acknowledgments
 
