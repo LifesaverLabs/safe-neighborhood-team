@@ -109,7 +109,7 @@ Submitted from the Neighbor 911 landing page
       // Send confirmation email to the volunteer
       const getRoleSpecificContent = (role) => {
         const roleContent = {
-          engineering: "We're excited about your technical expertise! You can start exploring <a href='https://github.com/LifesaverLabs/Neighbor911'>our mobile codebase</a> and help us get from early draft specs and early architecture discussion all the way to a minimal MVP and more full-featured implementation.",
+          engineering: "We're excited about your technical expertise! You can start exploring <a href='https://github.com/LifesaverLabs/NayborSOS'>our mobile codebase</a> and help us get from early draft specs and early architecture discussion all the way to a minimal MVP and more full-featured implementation.",
           design: "Your design skills are crucial for creating an intuitive emergency response experience. We'd love your input on user flows, interface, affordances, and accessibility.",
           product: "Your product management experience will help us prioritize features and set and stick to a roadmap that truly serve calmunities in crisis situations.",
           partnership: "Your networking and relationship-building skills could help us connect with emergency services, calmunity organizations, and local governments.",

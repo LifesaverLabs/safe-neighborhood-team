@@ -14,22 +14,22 @@ const Footer = () => {
             <h3 className="mb-4 text-lg font-semibold">Project</h3>
             <ul className="space-y-2 text-sm text-background/80">
               <li>
-                <a href="https://github.com/LifesaverLabs/Neighbor911" target="_blank" rel="noopener noreferrer" className="hover:text-background transition-colors">
+                <a href="https://github.com/LifesaverLabs/NayborSOS" target="_blank" rel="noopener noreferrer" className="hover:text-background transition-colors">
                   GitHub Repository
                 </a>
               </li>
               <li>
-                <a href="https://github.com/LifesaverLabs/Neighbor911/blob/main/docs/ARCHITECTURE.md" target="_blank" rel="noopener noreferrer" className="hover:text-background transition-colors">
+                <a href="https://github.com/LifesaverLabs/NayborSOS/blob/main/docs/ARCHITECTURE.md" target="_blank" rel="noopener noreferrer" className="hover:text-background transition-colors">
                   Documentation
                 </a>
               </li>
               <li>
-                <a href="https://github.com/LifesaverLabs/Neighbor911/blob/main/docs/PRD.md" target="_blank" rel="noopener noreferrer" className="hover:text-background transition-colors">
+                <a href="https://github.com/LifesaverLabs/NayborSOS/blob/main/docs/PRD.md" target="_blank" rel="noopener noreferrer" className="hover:text-background transition-colors">
                   Roadmap
                 </a>
               </li>
               <li>
-                <a href="https://github.com/LifesaverLabs/Neighbor911/blob/main/prompts/PROMPT.md" target="_blank" rel="noopener noreferrer" className="hover:text-background transition-colors">
+                <a href="https://github.com/LifesaverLabs/NayborSOS/blob/main/prompts/PROMPT.md" target="_blank" rel="noopener noreferrer" className="hover:text-background transition-colors">
                   Contributing Guide
                 </a>
               </li>
@@ -61,7 +61,7 @@ const Footer = () => {
             <h3 className="mb-4 text-lg font-semibold">Legal</h3>
             <ul className="space-y-2 text-sm text-background/80">
               <li>
-                <a href="https://github.com/LifesaverLabs/Neighbor911/blob/main/LICENSE" target="_blank" rel="noopener noreferrer" className="hover:text-background transition-colors">
+                <a href="https://github.com/LifesaverLabs/NayborSOS/blob/main/LICENSE" target="_blank" rel="noopener noreferrer" className="hover:text-background transition-colors">
                   MIT License
                 </a>
               </li>
