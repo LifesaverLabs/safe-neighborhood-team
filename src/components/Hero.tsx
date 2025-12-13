@@ -11,7 +11,7 @@ import { useEffect, useState, useRef } from "react";
 const Hero = () => {
   const [showNaybor, setShowNaybor] = useState(false);
   const [neighborSeconds, setNeighborSeconds] = useState(30);
-  const [proSeconds, setProSeconds] = useState(285);
+  const [proSeconds, setProSeconds] = useState(270);
   const plugin = useRef(Autoplay({ delay: 5000, stopOnInteraction: true }));
 
   const heroScenarios = [
