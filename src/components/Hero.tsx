@@ -10,7 +10,7 @@ import { useEffect, useState, useRef } from "react";
 
 const Hero = () => {
   const [neighborSeconds, setNeighborSeconds] = useState(30);
-  const [proSeconds, setProSeconds] = useState(300);
+  const [proSeconds, setProSeconds] = useState(285);
   const plugin = useRef(Autoplay({ delay: 5000, stopOnInteraction: true }));
 
   const heroScenarios = [
@@ -72,6 +72,24 @@ const Hero = () => {
     return `${mins}:${remainingSecs.toString().padStart(2, '0')}`;
   };
 
+  const formatNeighborTime = (secs: number) => {
+    if (secs >= 45) {
+      const startTime = formatTime(45);
+      const endTime = formatTime(secs);
+      return `${startTime} - ${endTime}`;
+    }
+    return formatTime(secs);
+  };
+
+  const formatProTime = (secs: number) => {
+    if (secs > 300) { // After 5:00
+      const startTime = formatTime(300);
+      const endTime = formatTime(secs);
+      return `${startTime} - ${endTime}`;
+    }
+    return formatTime(secs);
+  };
+
   const scrollToGetInvolved = () => {
     document.getElementById("get-involved")?.scrollIntoView({ behavior: "smooth" });
   };
@@ -115,13 +133,13 @@ const Hero = () => {
         <div className={`mb-2 transition-colors duration-500 ${neighborSeconds >= 90 ? 'text-green-600' : 'text-foreground'}`}>
           <div className="text-xs font-medium mb-0.5 opacity-90">Neighbor Response Time*</div>
           <div className="text-3xl font-bold tabular-nums tracking-tight">
-            {formatTime(neighborSeconds)}
+            {formatNeighborTime(neighborSeconds)}
           </div>
         </div>
-        <div className={`border-t pt-2 mb-2 transition-colors duration-500 ${proSeconds > 90 ? 'text-red-600 border-red-200' : 'text-foreground border-border'}`}>
+        <div className={`border-t pt-2 mb-2 transition-colors duration-500 ${proSeconds >= 300 ? 'text-red-600 border-red-200' : 'text-foreground border-border'}`}>
           <div className="text-xs font-medium mb-0.5 opacity-90">EMS Avg Response Time</div>
           <div className="text-3xl font-bold tabular-nums tracking-tight">
-            {formatTime(proSeconds)}
+            {formatProTime(proSeconds)}
           </div>
         </div>
         <div className="text-[10px] opacity-70 text-foreground border-t border-border pt-1.5">
@@ -145,13 +163,13 @@ const Hero = () => {
           <div className={`mb-2 transition-colors duration-500 ${neighborSeconds >= 90 ? 'text-green-600' : 'text-foreground'}`}>
             <div className="text-xs font-medium mb-0.5 opacity-90">Neighbor Response Time*</div>
             <div className="text-3xl font-bold tabular-nums tracking-tight">
-              {formatTime(neighborSeconds)}
+              {formatNeighborTime(neighborSeconds)}
             </div>
           </div>
-          <div className={`border-t pt-2 mb-2 transition-colors duration-500 ${proSeconds > 90 ? 'text-red-600 border-red-200' : 'text-foreground border-border'}`}>
+          <div className={`border-t pt-2 mb-2 transition-colors duration-500 ${proSeconds >= 300 ? 'text-red-600 border-red-200' : 'text-foreground border-border'}`}>
             <div className="text-xs font-medium mb-0.5 opacity-90">Pro Avg Response Time</div>
             <div className="text-3xl font-bold tabular-nums tracking-tight">
-              {formatTime(proSeconds)}
+              {formatProTime(proSeconds)}
             </div>
           </div>
           <div className="text-[10px] opacity-70 text-foreground border-t border-border pt-1.5">
