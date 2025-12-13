@@ -85,7 +85,13 @@ const Hero = () => {
     if (secs >= 45) {
       const startTime = formatTime(45);
       const endTime = formatTime(secs);
-      return `${startTime} - ${endTime}`;
+      return (
+        <>
+          <span className="text-green-600">{startTime}</span>
+          {' - '}
+          {endTime}
+        </>
+      );
     }
     return formatTime(secs);
   };
@@ -145,9 +151,9 @@ const Hero = () => {
             {formatNeighborTime(neighborSeconds)}
           </div>
         </div>
-        <div className={`border-t pt-2 mb-2 transition-colors duration-500 ${proSeconds >= 300 ? 'text-red-600 border-red-200' : 'text-foreground border-border'}`}>
-          <div className="text-xs font-medium mb-0.5 opacity-90">EMS Avg Response Time</div>
-          <div className="text-3xl font-bold tabular-nums tracking-tight">
+        <div className="border-t pt-2 mb-2 border-red-200">
+          <div className="text-xs font-medium mb-0.5 opacity-90 animate-pulse-red">EMS Avg Response Time</div>
+          <div className="text-3xl font-bold tabular-nums tracking-tight animate-pulse-red">
             {formatProTime(proSeconds)}
           </div>
         </div>
@@ -175,9 +181,9 @@ const Hero = () => {
               {formatNeighborTime(neighborSeconds)}
             </div>
           </div>
-          <div className={`border-t pt-2 mb-2 transition-colors duration-500 ${proSeconds >= 300 ? 'text-red-600 border-red-200' : 'text-foreground border-border'}`}>
-            <div className="text-xs font-medium mb-0.5 opacity-90">Pro Avg Response Time</div>
-            <div className="text-3xl font-bold tabular-nums tracking-tight">
+          <div className="border-t pt-2 mb-2 border-red-200">
+            <div className="text-xs font-medium mb-0.5 opacity-90 animate-pulse-red">Pro Avg Response Time</div>
+            <div className="text-3xl font-bold tabular-nums tracking-tight animate-pulse-red">
               {formatProTime(proSeconds)}
             </div>
           </div>

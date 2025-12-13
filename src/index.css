@@ -103,3 +103,18 @@ All colors MUST be HSL.
     @apply bg-background text-foreground;
   }
 }
+
+@layer utilities {
+  @keyframes pulse-red {
+    0%, 66.66% {
+      color: hsl(0 70% 50%);
+    }
+    83.33%, 100% {
+      color: hsl(220 15% 20%);
+    }
+  }
+
+  .animate-pulse-red {
+    animation: pulse-red 3s ease-in-out infinite;
+  }
+}
