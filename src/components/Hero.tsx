@@ -9,8 +9,8 @@ import heroWellness from "@/assets/hero-wellness-check.jpg";
 import { useEffect, useState, useRef } from "react";
 
 const Hero = () => {
-  const [neighborSeconds, setNeighborSeconds] = useState(0);
-  const [proSeconds, setProSeconds] = useState(0);
+  const [neighborSeconds, setNeighborSeconds] = useState(30);
+  const [proSeconds, setProSeconds] = useState(300);
   const plugin = useRef(Autoplay({ delay: 5000, stopOnInteraction: true }));
 
   const heroScenarios = [
@@ -54,15 +54,10 @@ const Hero = () => {
         }
         return prev;
       });
-      
+
       setProSeconds((prev) => {
         if (prev < 540) { // 9 minutes = 540 seconds
           return prev + 1;
-        }
-        // Reset both when EMS reaches 540
-        if (prev >= 540) {
-          setNeighborSeconds(0);
-          return 0;
         }
         return prev;
       });
