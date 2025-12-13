@@ -20,7 +20,7 @@ const About = () => {
               </CardHeader>
               <CardContent className="text-muted-foreground">
                 <p className="mb-4">
-                  Average EMS response time is 8-15 minutes. For cardiac arrest, drowning, or overdose, survival windows are often 3-5 minutes. Naybor 911™ creates a network of "Minute Responders"—naybors ready to help before professional responders arrive.
+                  Average EMS response time is 8-15 minutes. For cardiac arrest, drowning, or overdose, survival windows are often 3-5 minutes. Naybor SOS™ creates a network of "Minute Responders"—neighbors ready to help before professional responders arrive.
                 </p>
                 <p>
                   Everyone can be a hero. You don't need special training to save a life. Sometimes the most powerful intervention is simply showing up—knocking on a door for a wellness check, being an active bystander, or staying with someone until help arrives.
@@ -37,7 +37,7 @@ const About = () => {
               </CardHeader>
               <CardContent className="text-muted-foreground">
                 <p className="mb-4">
-                  All Naybor 911™ code is released under the <strong>MIT License</strong>. The code is freely available for use, modification, and distribution. The only intellectual property we protect is the Naybor 911™ trademark—to maintain a unified, trusted emergency response network.
+                  All Naybor SOS™ code is released under the <strong>MIT License</strong>. The code is freely available for use, modification, and distribution. The only intellectual property we protect is the Naybor SOS™ trademark—to maintain a unified, trusted emergency response network.
                 </p>
                 <p className="flex items-center gap-2">
                   <strong>Lives saved &gt; Proprietary control.</strong> Emergency response technology should be freely available.
@@ -54,7 +54,7 @@ const About = () => {
               </CardHeader>
               <CardContent className="text-muted-foreground">
                 <p className="mb-4">
-                  Naybor 911™ is organized by <strong>Lifesaver Labs Public Benefit Corporation</strong>, a legal structure that allows us to pursue both profit and public benefit while maintaining accountability to our social mission.
+                  Naybor SOS™ is organized by <strong>Lifesaver Labs Public Benefit Corporation</strong>, a legal structure that allows us to pursue both profit and public benefit while maintaining accountability to our social mission.
                 </p>
                 <p>
                   We are currently seeking funding through contributions, grants, seed funding, and partnerships. All contributions are volunteer-based and unpaid at this time, including those of the founder.

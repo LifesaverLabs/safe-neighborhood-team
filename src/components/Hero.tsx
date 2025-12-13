@@ -9,9 +9,9 @@ import heroWellness from "@/assets/hero-wellness-check.jpg";
 import { useEffect, useState, useRef } from "react";
 
 const Hero = () => {
-  const [neighborSeconds, setNeighborSeconds] = useState(0);
   const [showNaybor, setShowNaybor] = useState(false);
-  const [proSeconds, setProSeconds] = useState(0);
+  const [neighborSeconds, setNeighborSeconds] = useState(30);
+  const [proSeconds, setProSeconds] = useState(285);
   const plugin = useRef(Autoplay({ delay: 5000, stopOnInteraction: true }));
 
   const heroScenarios = [
@@ -55,15 +55,10 @@ const Hero = () => {
         }
         return prev;
       });
-      
+
       setProSeconds((prev) => {
         if (prev < 540) { // 9 minutes = 540 seconds
           return prev + 1;
-        }
-        // Reset both when EMS reaches 540
-        if (prev >= 540) {
-          setNeighborSeconds(0);
-          return 0;
         }
         return prev;
       });
@@ -84,6 +79,24 @@ const Hero = () => {
     const mins = Math.floor(secs / 60);
     const remainingSecs = secs % 60;
     return `${mins}:${remainingSecs.toString().padStart(2, '0')}`;
+  };
+
+  const formatNeighborTime = (secs: number) => {
+    if (secs >= 45) {
+      const startTime = formatTime(45);
+      const endTime = formatTime(secs);
+      return `${startTime} - ${endTime}`;
+    }
+    return formatTime(secs);
+  };
+
+  const formatProTime = (secs: number) => {
+    if (secs > 300) { // After 5:00
+      const startTime = formatTime(300);
+      const endTime = formatTime(secs);
+      return `${startTime} - ${endTime}`;
+    }
+    return formatTime(secs);
   };
 
   const scrollToGetInvolved = () => {
@@ -127,15 +140,15 @@ const Hero = () => {
       {/* Response Time Counter - Large screens: top-right absolute, Mobile/Tablet: hidden */}
       <div className="hidden lg:block absolute top-4 right-4 xl:top-8 xl:right-8 z-20 bg-background/90 backdrop-blur-sm px-3 py-2 xl:px-4 xl:py-3 rounded-lg shadow-lg border-2 border-border animate-fade-in">
         <div className={`mb-2 transition-colors duration-500 ${neighborSeconds >= 90 ? 'text-green-600' : 'text-foreground'}`}>
-          <div className="text-xs font-medium mb-0.5 opacity-90">Naybor Response Time*</div>
-          <div className="text-2xl xl:text-3xl font-bold tabular-nums tracking-tight">
-            {formatTime(neighborSeconds)}
+          <div className="text-xs font-medium mb-0.5 opacity-90">Neighbor Response Time*</div>
+          <div className="text-3xl font-bold tabular-nums tracking-tight">
+            {formatNeighborTime(neighborSeconds)}
           </div>
         </div>
-        <div className={`border-t pt-2 mb-2 transition-colors duration-500 ${proSeconds > 90 ? 'text-red-600 border-red-200' : 'text-foreground border-border'}`}>
-          <div className="text-xs font-medium mb-0.5 opacity-90">Pro Avg Response Time</div>
+        <div className={`border-t pt-2 mb-2 transition-colors duration-500 ${proSeconds >= 300 ? 'text-red-600 border-red-200' : 'text-foreground border-border'}`}>
+          <div className="text-xs font-medium mb-0.5 opacity-90">EMS Avg Response Time</div>
           <div className="text-3xl font-bold tabular-nums tracking-tight">
-            {formatTime(proSeconds)}
+            {formatProTime(proSeconds)}
           </div>
         </div>
         <div className="text-[10px] opacity-70 text-foreground border-t border-border pt-1.5">
@@ -143,12 +156,12 @@ const Hero = () => {
         </div>
       </div>
 
-      <div className="container relative z-10 px-4 py-12 sm:py-16 lg:py-20 mx-auto text-center">
-        <h1 className="mb-4 sm:mb-6 text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-bold text-primary-foreground">
-          {showNaybor ? "Naybor 911™" : "Neighbor 911™"}
+      <div className="container relative z-10 px-4 py-20 mx-auto text-center">
+        <h1 className="mb-6 text-5xl font-bold text-primary-foreground md:text-6xl lg:text-7xl">
+          Naybor SOS™
         </h1>
         <p className="mb-4 text-xl text-primary-foreground/90 md:text-2xl max-w-3xl mx-auto">
-          Emergency neighbor first first responders racing to you in density⁵ under 90 seconds to 3 minutes, not 6 - 10 minutes
+          Emergency neighbor first first responders racing to you in under 90 seconds to 3 minutes, not 6 - 10 minutes
         </p>
         <p className="mb-6 sm:mb-8 text-sm sm:text-base lg:text-lg text-primary-foreground/80 max-w-2xl mx-auto px-2">
           An open source platform connecting naybors to respond to emergencies faster than traditional services
@@ -157,15 +170,15 @@ const Hero = () => {
         {/* Response Time Counter - Mobile/Tablet: below text, Large screens: hidden */}
         <div className="lg:hidden mb-6 sm:mb-8 inline-block bg-background/90 backdrop-blur-sm px-3 py-2 sm:px-4 sm:py-3 rounded-lg shadow-lg border-2 border-border animate-fade-in max-w-[90vw]">
           <div className={`mb-2 transition-colors duration-500 ${neighborSeconds >= 90 ? 'text-green-600' : 'text-foreground'}`}>
-            <div className="text-xs font-medium mb-0.5 opacity-90">Naybor Response Time*</div>
-            <div className="text-2xl sm:text-3xl font-bold tabular-nums tracking-tight">
-              {formatTime(neighborSeconds)}
+            <div className="text-xs font-medium mb-0.5 opacity-90">Neighbor Response Time*</div>
+            <div className="text-3xl font-bold tabular-nums tracking-tight">
+              {formatNeighborTime(neighborSeconds)}
             </div>
           </div>
-          <div className={`border-t pt-2 mb-2 transition-colors duration-500 ${proSeconds > 90 ? 'text-red-600 border-red-200' : 'text-foreground border-border'}`}>
+          <div className={`border-t pt-2 mb-2 transition-colors duration-500 ${proSeconds >= 300 ? 'text-red-600 border-red-200' : 'text-foreground border-border'}`}>
             <div className="text-xs font-medium mb-0.5 opacity-90">Pro Avg Response Time</div>
             <div className="text-3xl font-bold tabular-nums tracking-tight">
-              {formatTime(proSeconds)}
+              {formatProTime(proSeconds)}
             </div>
           </div>
           <div className="text-[10px] opacity-70 text-foreground border-t border-border pt-1.5">
