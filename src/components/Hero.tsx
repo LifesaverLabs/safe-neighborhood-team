@@ -164,7 +164,7 @@ const Hero = () => {
 
       <div className="container relative z-10 px-4 py-20 mx-auto text-center">
         <h1 className="mb-6 text-5xl font-bold text-primary-foreground md:text-6xl lg:text-7xl">
-          Naybor SOS™
+          Neighbor 911™
         </h1>
         <p className="mb-4 text-xl text-primary-foreground/90 md:text-2xl max-w-3xl mx-auto">
           Emergency neighbor first first responders racing to you in under 90 seconds to 3 minutes, not 6 - 10 minutes
