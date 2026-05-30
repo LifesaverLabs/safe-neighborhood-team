@@ -13,7 +13,7 @@ const ExistingSystems = () => {
               Good Neighbor First-Responder Systems Already Work
             </h2>
             <p className="text-lg text-muted-foreground max-w-3xl mx-auto">
-              Don't wait for Naybor SOS™ to launch. These proven systems are operational <strong>right now</strong> in select regions,
+              Don't wait for Neighbor 911™ to launch. These proven systems are operational <strong>right now</strong> in select regions,
               dispatching trained neighbors to cardiac arrests alongside emergency services. They demonstrate that community
               first-response works and saves lives.
             </p>
@@ -81,7 +81,7 @@ const ExistingSystems = () => {
 
               <div className="pt-4 border-t border-border">
                 <p className="text-sm text-muted-foreground italic mb-4">
-                  <strong>🏆 PulsePoint demonstrates the Naybor SOS™ thesis:</strong> Trained neighbors can respond to emergencies
+                  <strong>🏆 PulsePoint demonstrates the Neighbor 911™ thesis:</strong> Trained neighbors can respond to emergencies
                   faster than traditional EMS and save lives. If your region has PulsePoint, download it today.
                 </p>
                 <div className="bg-primary/10 border border-primary/30 rounded-lg p-4">
@@ -89,7 +89,7 @@ const ExistingSystems = () => {
                     🤝 Open Partnership Proposal
                   </p>
                   <p className="text-sm text-muted-foreground mb-3">
-                    We believe PulsePoint and Naybor SOS™ could work together to expand community first-response beyond cardiac arrest.
+                    We believe PulsePoint and Neighbor 911™ could work together to expand community first-response beyond cardiac arrest.
                   </p>
                   <Button asChild variant="outline" size="sm" className="w-full sm:w-auto">
                     <a
@@ -185,7 +185,7 @@ const ExistingSystems = () => {
                 </h3>
                 <p className="text-muted-foreground mb-6">
                   PulsePoint and GoodSAM demonstrate that neighbor first-response works for cardiac arrest.
-                  But <strong>Naybor SOS™ envisions something broader</strong>: a system that handles not just cardiac
+                  But <strong>Neighbor 911™ envisions something broader</strong>: a system that handles not just cardiac
                   emergencies, but wellness checks, overdose response, lost pets, domestic support, mental health crises,
                   and more—connecting <em>any neighbor</em> who can help, not just medical professionals.
                 </p>
@@ -195,7 +195,7 @@ const ExistingSystems = () => {
                     variant="default"
                     onClick={() => document.getElementById("get-involved")?.scrollIntoView({ behavior: "smooth" })}
                   >
-                    Join the Naybor SOS™ Movement
+                    Join the Neighbor 911™ Movement
                   </Button>
                   <Button
                     size="lg"
