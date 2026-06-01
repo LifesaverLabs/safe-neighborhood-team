@@ -9,6 +9,8 @@ const BodySchema = z.object({
   name: z.string().trim().max(150).optional().default(''),
   title: z.string().trim().max(150).optional().default(''),
   organization: z.string().trim().max(200).optional().default(''),
+  city_region: z.string().trim().max(150).optional().default(''),
+  interest: z.string().trim().max(100).optional().default(''),
 });
 
 function authHeader() {

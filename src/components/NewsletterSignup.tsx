@@ -3,21 +3,48 @@ import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { Alert, AlertDescription, AlertTitle } from "@/components/ui/alert";
+import {
+  Select,
+  SelectContent,
+  SelectItem,
+  SelectTrigger,
+  SelectValue,
+} from "@/components/ui/select";
 import { useToast } from "@/hooks/use-toast";
 import { MessageSquare, Mail, CheckCircle2 } from "lucide-react";
 import { supabase } from "@/integrations/supabase/client";
 import { z } from "zod";
+
+const INTERESTS = [
+  "Public Safety",
+  "Community Organizing",
+  "Partner Inquiry",
+  "Emergency Medical",
+  "Drone Coverage",
+  "General Updates",
+] as const;
 
 const schema = z.object({
   email: z.string().trim().email("Please enter a valid email").max(255),
   name: z.string().trim().max(150).optional(),
   title: z.string().trim().max(150).optional(),
   organization: z.string().trim().max(200).optional(),
+  city_region: z.string().trim().max(150).optional(),
+  interest: z.string().trim().max(100).optional(),
 });
+
+const emptyData = {
+  email: "",
+  name: "",
+  title: "",
+  organization: "",
+  city_region: "",
+  interest: "",
+};
 
 const NewsletterSignup = () => {
   const { toast } = useToast();
-  const [data, setData] = useState({ email: "", name: "", title: "", organization: "" });
+  const [data, setData] = useState(emptyData);
   const [submitting, setSubmitting] = useState(false);
   const [success, setSuccess] = useState(false);
 
@@ -45,7 +72,7 @@ const NewsletterSignup = () => {
           ? "This email is already subscribed to Neighbor 911 News."
           : "Check your inbox for a confirmation link to complete your subscription.",
       });
-      setData({ email: "", name: "", title: "", organization: "" });
+      setData(emptyData);
     } catch (err) {
       console.error(err);
       toast({
@@ -122,6 +149,34 @@ const NewsletterSignup = () => {
                   onChange={(e) => setData({ ...data, organization: e.target.value })}
                   className="bg-background"
                 />
+              </div>
+              <div className="space-y-1">
+                <Label htmlFor="nl-city">City / Region</Label>
+                <Input
+                  id="nl-city"
+                  placeholder="e.g. Austin, TX (optional)"
+                  value={data.city_region}
+                  onChange={(e) => setData({ ...data, city_region: e.target.value })}
+                  className="bg-background"
+                />
+              </div>
+              <div className="space-y-1">
+                <Label htmlFor="nl-interest">Primary Interest</Label>
+                <Select
+                  value={data.interest}
+                  onValueChange={(value) => setData({ ...data, interest: value })}
+                >
+                  <SelectTrigger id="nl-interest" className="bg-background">
+                    <SelectValue placeholder="Select an interest (optional)" />
+                  </SelectTrigger>
+                  <SelectContent>
+                    {INTERESTS.map((i) => (
+                      <SelectItem key={i} value={i}>
+                        {i}
+                      </SelectItem>
+                    ))}
+                  </SelectContent>
+                </Select>
               </div>
             </div>
             <Button type="submit" disabled={submitting} className="gap-2">
