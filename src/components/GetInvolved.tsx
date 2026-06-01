@@ -120,26 +120,6 @@ const GetInvolved = () => {
                   Subscribe to Neighbor 911 News
                   <ExternalLink className="h-3 w-3" />
                 </a>
-                <a
-                  href="https://www.reddit.com/r/neighbor911/"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="inline-flex items-center gap-2 px-4 py-2 rounded-md bg-primary text-primary-foreground hover:bg-primary/90 transition-colors font-medium"
-                >
-                  <Users className="h-4 w-4" />
-                  Join Reddit Community
-                  <ExternalLink className="h-3 w-3" />
-                </a>
-                <a
-                  href="https://discord.gg/wCeGKj9Khz"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="inline-flex items-center gap-2 px-4 py-2 rounded-md bg-primary text-primary-foreground hover:bg-primary/90 transition-colors font-medium"
-                >
-                  <MessageSquare className="h-4 w-4" />
-                  Join Discord Server
-                  <ExternalLink className="h-3 w-3" />
-                </a>
               </div>
             </AlertDescription>
         </Alert>
