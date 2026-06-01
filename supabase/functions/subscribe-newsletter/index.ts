@@ -45,13 +45,15 @@ Deno.serve(async (req) => {
         { status: 400, headers: { ...corsHeaders, 'Content-Type': 'application/json' } },
       );
     }
-    const { email, name, title, organization } = parsed.data;
+    const { email, name, title, organization, city_region, interest } = parsed.data;
 
     const listId = await resolveListId();
 
     const attribs: Record<string, string> = {};
     if (title) attribs.title = title;
     if (organization) attribs.organization = organization;
+    if (city_region) attribs.city_region = city_region;
+    if (interest) attribs.interest = interest;
 
     const body = {
       email,
