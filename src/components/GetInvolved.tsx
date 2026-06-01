@@ -6,7 +6,7 @@ import { Label } from "@/components/ui/label";
 import { Textarea } from "@/components/ui/textarea";
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
 import { useToast } from "@/hooks/use-toast";
-import { Code, Palette, Users, Briefcase, Heart, DollarSign, GraduationCap, Lightbulb, MessageSquare, ExternalLink, Mail } from "lucide-react";
+import { Code, Palette, Users, Briefcase, Heart, DollarSign, GraduationCap, Lightbulb, MessageSquare, Mail } from "lucide-react";
 import { Alert, AlertDescription, AlertTitle } from "@/components/ui/alert";
 
 const roles = [
