@@ -57,7 +57,7 @@ const About = () => {
                   Neighbor 911™ is organized by <strong>Lifesaver Labs Public Benefit Corporation</strong>, a legal structure that allows us to pursue both profit and public benefit while maintaining accountability to our social mission.
                 </p>
                 <p>
-                  We are currently seeking funding through contributions, grants, seed funding, and partnerships. All contributions are volunteer-based and unpaid at this time, including those of the founder.
+                  We are currently seeking funding through contributions, grants, seed funding, and partnerships.
                 </p>
               </CardContent>
             </Card>
