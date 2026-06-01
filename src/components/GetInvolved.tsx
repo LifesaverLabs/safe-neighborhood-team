@@ -104,34 +104,44 @@ const GetInvolved = () => {
 
         <Alert className="mb-12 max-w-4xl mx-auto border-primary/20 bg-primary/5">
           <MessageSquare className="h-5 w-5 text-primary" />
-          <AlertTitle className="text-xl font-semibold mb-2">Join Our Community!</AlertTitle>
-          <AlertDescription className="text-base space-y-3">
-            <p>
-              Before contributing, please review the documentation above and join our communities to connect with other volunteers, ask questions, and stay updated on project developments.
-            </p>
-            <div className="flex flex-wrap gap-4 mt-4">
-              <a
-                href="https://www.reddit.com/r/neighbor911/"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="inline-flex items-center gap-2 px-4 py-2 rounded-md bg-primary text-primary-foreground hover:bg-primary/90 transition-colors font-medium"
-              >
-                <Users className="h-4 w-4" />
-                Join Reddit Community
-                <ExternalLink className="h-3 w-3" />
-              </a>
-              <a
-                href="https://discord.gg/wCeGKj9Khz"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="inline-flex items-center gap-2 px-4 py-2 rounded-md bg-primary text-primary-foreground hover:bg-primary/90 transition-colors font-medium"
-              >
-                <MessageSquare className="h-4 w-4" />
-                Join Discord Server
-                <ExternalLink className="h-3 w-3" />
-              </a>
-            </div>
-          </AlertDescription>
+            <AlertTitle className="text-xl font-semibold mb-2">Join Our Community!</AlertTitle>
+            <AlertDescription className="text-base space-y-3">
+              <p>
+                Subscribe to <strong>Neighbor 911 News</strong>, our Listmonk-hosted newsletter, for project updates, launch announcements, and ways to get involved. Then join our communities to connect with other volunteers and ask questions.
+              </p>
+              <div className="flex flex-wrap gap-4 mt-4">
+                <a
+                  href="https://lists.neighbor911.org/subscription/form"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-flex items-center gap-2 px-4 py-2 rounded-md bg-primary text-primary-foreground hover:bg-primary/90 transition-colors font-medium"
+                >
+                  <Mail className="h-4 w-4" />
+                  Subscribe to Neighbor 911 News
+                  <ExternalLink className="h-3 w-3" />
+                </a>
+                <a
+                  href="https://www.reddit.com/r/neighbor911/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-flex items-center gap-2 px-4 py-2 rounded-md bg-primary text-primary-foreground hover:bg-primary/90 transition-colors font-medium"
+                >
+                  <Users className="h-4 w-4" />
+                  Join Reddit Community
+                  <ExternalLink className="h-3 w-3" />
+                </a>
+                <a
+                  href="https://discord.gg/wCeGKj9Khz"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-flex items-center gap-2 px-4 py-2 rounded-md bg-primary text-primary-foreground hover:bg-primary/90 transition-colors font-medium"
+                >
+                  <MessageSquare className="h-4 w-4" />
+                  Join Discord Server
+                  <ExternalLink className="h-3 w-3" />
+                </a>
+              </div>
+            </AlertDescription>
         </Alert>
 
         <div className="grid gap-8 lg:grid-cols-2 max-w-5xl mx-auto">
