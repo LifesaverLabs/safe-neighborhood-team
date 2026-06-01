@@ -6,8 +6,9 @@ import { Label } from "@/components/ui/label";
 import { Textarea } from "@/components/ui/textarea";
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
 import { useToast } from "@/hooks/use-toast";
-import { Code, Palette, Users, Briefcase, Heart, DollarSign, GraduationCap, Lightbulb, MessageSquare, Mail } from "lucide-react";
-import { Alert, AlertDescription, AlertTitle } from "@/components/ui/alert";
+import { Code, Palette, Users, Briefcase, Heart, DollarSign, GraduationCap, Lightbulb } from "lucide-react";
+import NewsletterSignup from "./NewsletterSignup";
+
 
 const roles = [
   { value: "engineering", label: "Engineering", icon: Code },
@@ -102,46 +103,8 @@ const GetInvolved = () => {
           </p>
         </div>
 
-        <Alert className="mb-12 max-w-4xl mx-auto border-primary/20 bg-primary/5">
-          <MessageSquare className="h-5 w-5 text-primary" />
-            <AlertTitle className="text-xl font-semibold mb-2">Join Our Community!</AlertTitle>
-            <AlertDescription className="text-base space-y-4">
-              <p>
-                Subscribe to <strong>Neighbor 911 News</strong> for project updates, launch announcements, and ways to get involved. Roughly monthly, no spam.
-              </p>
-              <form
-                action="https://lists.neighbor911.org/subscription/form"
-                method="post"
-                target="_blank"
-                className="flex flex-col sm:flex-row gap-3 items-stretch"
-              >
-                <input type="hidden" name="l" value="b1da29ee-306e-4725-97b2-66371e9152a5" />
-                <input type="hidden" name="nonce" value="" />
-                <Input
-                  type="text"
-                  name="name"
-                  placeholder="Name (optional)"
-                  className="sm:max-w-[200px] bg-background"
-                  aria-label="Name (optional)"
-                />
-                <Input
-                  type="email"
-                  name="email"
-                  required
-                  placeholder="you@example.com"
-                  className="flex-1 bg-background"
-                  aria-label="Email address"
-                />
-                <Button type="submit" className="gap-2 whitespace-nowrap">
-                  <Mail className="h-4 w-4" />
-                  Subscribe
-                </Button>
-              </form>
-              <p className="text-xs text-muted-foreground">
-                A confirmation link will be emailed to you to complete your subscription.
-              </p>
-            </AlertDescription>
-        </Alert>
+        <NewsletterSignup />
+
 
 
         <div className="grid gap-8 lg:grid-cols-2 max-w-5xl mx-auto">
