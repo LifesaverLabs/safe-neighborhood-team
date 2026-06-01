@@ -105,24 +105,44 @@ const GetInvolved = () => {
         <Alert className="mb-12 max-w-4xl mx-auto border-primary/20 bg-primary/5">
           <MessageSquare className="h-5 w-5 text-primary" />
             <AlertTitle className="text-xl font-semibold mb-2">Join Our Community!</AlertTitle>
-            <AlertDescription className="text-base space-y-3">
+            <AlertDescription className="text-base space-y-4">
               <p>
-                Subscribe to <strong>Neighbor 911 News</strong>, our Listmonk-hosted newsletter, for project updates, launch announcements, and ways to get involved.
+                Subscribe to <strong>Neighbor 911 News</strong> for project updates, launch announcements, and ways to get involved. Roughly monthly, no spam.
               </p>
-              <div className="flex flex-wrap gap-4 mt-4">
-                <a
-                  href="https://lists.neighbor911.org/subscription/form"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="inline-flex items-center gap-2 px-4 py-2 rounded-md bg-primary text-primary-foreground hover:bg-primary/90 transition-colors font-medium"
-                >
+              <form
+                action="https://lists.neighbor911.org/subscription/form"
+                method="post"
+                target="_blank"
+                className="flex flex-col sm:flex-row gap-3 items-stretch"
+              >
+                <input type="hidden" name="l" value="b1da29ee-306e-4725-97b2-66371e9152a5" />
+                <input type="hidden" name="nonce" value="" />
+                <Input
+                  type="text"
+                  name="name"
+                  placeholder="Name (optional)"
+                  className="sm:max-w-[200px] bg-background"
+                  aria-label="Name (optional)"
+                />
+                <Input
+                  type="email"
+                  name="email"
+                  required
+                  placeholder="you@example.com"
+                  className="flex-1 bg-background"
+                  aria-label="Email address"
+                />
+                <Button type="submit" className="gap-2 whitespace-nowrap">
                   <Mail className="h-4 w-4" />
-                  Subscribe to Neighbor 911 News
-                  <ExternalLink className="h-3 w-3" />
-                </a>
-              </div>
+                  Subscribe
+                </Button>
+              </form>
+              <p className="text-xs text-muted-foreground">
+                A confirmation link will be emailed to you to complete your subscription.
+              </p>
             </AlertDescription>
         </Alert>
+
 
         <div className="grid gap-8 lg:grid-cols-2 max-w-5xl mx-auto">
           <div className="space-y-6">
