@@ -107,7 +107,7 @@ const GetInvolved = () => {
             <AlertTitle className="text-xl font-semibold mb-2">Join Our Community!</AlertTitle>
             <AlertDescription className="text-base space-y-3">
               <p>
-                Subscribe to <strong>Neighbor 911 News</strong>, our Listmonk-hosted newsletter, for project updates, launch announcements, and ways to get involved. Then join our communities to connect with other volunteers and ask questions.
+                Subscribe to <strong>Neighbor 911 News</strong>, our Listmonk-hosted newsletter, for project updates, launch announcements, and ways to get involved.
               </p>
               <div className="flex flex-wrap gap-4 mt-4">
                 <a
