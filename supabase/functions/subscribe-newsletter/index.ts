@@ -9,6 +9,8 @@ const BodySchema = z.object({
   name: z.string().trim().max(150).optional().default(''),
   title: z.string().trim().max(150).optional().default(''),
   organization: z.string().trim().max(200).optional().default(''),
+  city_region: z.string().trim().max(150).optional().default(''),
+  interest: z.string().trim().max(100).optional().default(''),
 });
 
 function authHeader() {
@@ -43,13 +45,15 @@ Deno.serve(async (req) => {
         { status: 400, headers: { ...corsHeaders, 'Content-Type': 'application/json' } },
       );
     }
-    const { email, name, title, organization } = parsed.data;
+    const { email, name, title, organization, city_region, interest } = parsed.data;
 
     const listId = await resolveListId();
 
     const attribs: Record<string, string> = {};
     if (title) attribs.title = title;
     if (organization) attribs.organization = organization;
+    if (city_region) attribs.city_region = city_region;
+    if (interest) attribs.interest = interest;
 
     const body = {
       email,
