@@ -133,7 +133,7 @@ const GetInvolved = () => {
                 <CardTitle>Current Status</CardTitle>
               </CardHeader>
               <CardContent className="space-y-2 text-sm text-muted-foreground">
-                <p>• <strong>Volunteer-based:</strong> All contributions are currently unpaid</p>
+                
                 <p>• <strong>Seeking funding:</strong> We're actively looking for financial support</p>
                 <p>• <strong>Open source:</strong> MIT licensed code, trademark protected brand</p>
                 <p>• <strong>Public Benefit Corp:</strong> Organized to serve community needs</p>
