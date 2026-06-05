@@ -37,7 +37,7 @@ const About = () => {
               </CardHeader>
               <CardContent className="text-muted-foreground">
                 <p className="mb-4">
-                  All Neighbor 911™ code is released under the <strong>MIT License</strong>. The code is freely available for use, modification, and distribution.
+                  All Neighbor 911™ code is released under the <strong>MIT License</strong>. The code is available for use, modification, and distribution.
                 </p>
                 <p className="mb-4">
                   We also have a <strong>patent application pending</strong> on certain novel aspects of our emergency response network technology. This protects the unique innovations we've developed while still allowing the broader community to benefit from and build upon our open-source codebase.
