@@ -32,15 +32,18 @@ const About = () => {
               <CardHeader>
                 <CardTitle className="flex items-center gap-2">
                   <CheckCircle2 className="w-5 h-5 text-primary" />
-                  Open Source Philosophy
+                  Open Source with IP Protection
                 </CardTitle>
               </CardHeader>
               <CardContent className="text-muted-foreground">
                 <p className="mb-4">
-                  All Neighbor 911™ code is released under the <strong>MIT License</strong>. The code is freely available for use, modification, and distribution. The only intellectual property we protect is the Neighbor 911™ trademark—to maintain a unified, trusted emergency response network.
+                  All Neighbor 911™ code is released under the <strong>MIT License</strong>. The code is freely available for use, modification, and distribution.
+                </p>
+                <p className="mb-4">
+                  We also have a <strong>patent application pending</strong> on certain novel aspects of our emergency response network technology. This protects the unique innovations we've developed while still allowing the broader community to benefit from and build upon our open-source codebase.
                 </p>
                 <p className="flex items-center gap-2">
-                  <strong>Lives saved &gt; Proprietary control.</strong> Emergency response technology should be freely available.
+                  <strong>Lives saved &gt; Proprietary control.</strong> The Neighbor 911™ trademark is protected to maintain a unified, trusted emergency response network.
                 </p>
               </CardContent>
             </Card>
