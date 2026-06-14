@@ -2,59 +2,12 @@ const Footer = () => {
   return (
     <footer className="py-12 bg-foreground text-background">
       <div className="container px-4 mx-auto">
-        <div className="grid gap-8 md:grid-cols-2 lg:grid-cols-4">
+        <div className="grid gap-8 md:grid-cols-3">
           <div>
             <h3 className="mb-4 text-lg font-semibold">Neighbor 911™</h3>
             <p className="text-sm text-background/80">
-              Community-based emergency response platform. Open source, volunteer-driven, saving lives one neighbor at a
-              time.
+              Community-based emergency response platform. Volunteer-driven, saving lives one neighbor at a time.
             </p>
-          </div>
-
-          <div>
-            <h3 className="mb-4 text-lg font-semibold">Project</h3>
-            <ul className="space-y-2 text-sm text-background/80">
-              <li>
-                <a
-                  href="https://github.com/LifesaverLabs/NayborSOS"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="hover:text-background transition-colors"
-                >
-                  GitHub Repository
-                </a>
-              </li>
-              <li>
-                <a
-                  href="https://github.com/LifesaverLabs/NayborSOS/blob/main/docs/ARCHITECTURE.md"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="hover:text-background transition-colors"
-                >
-                  Documentation
-                </a>
-              </li>
-              <li>
-                <a
-                  href="https://github.com/LifesaverLabs/NayborSOS/blob/main/docs/PRD.md"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="hover:text-background transition-colors"
-                >
-                  Roadmap
-                </a>
-              </li>
-              <li>
-                <a
-                  href="https://github.com/LifesaverLabs/NayborSOS/blob/main/prompts/PROMPT.md"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="hover:text-background transition-colors"
-                >
-                  Contributing Guide
-                </a>
-              </li>
-            </ul>
           </div>
 
           <div>
@@ -92,17 +45,10 @@ const Footer = () => {
             <h3 className="mb-4 text-lg font-semibold">Legal</h3>
             <ul className="space-y-2 text-sm text-background/80">
               <li>
-                <a
-                  href="https://github.com/LifesaverLabs/NayborSOS/blob/main/LICENSE"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="hover:text-background transition-colors"
-                >
-                  MIT License
-                </a>
+                <span className="text-background/60">Trademark: Neighbor 911™</span>
               </li>
               <li>
-                <span className="text-background/60">Trademark: Neighbor 911™</span>
+                <span className="text-background/60">Patent Pending</span>
               </li>
               <li>
                 <span className="text-background/60">Public Benefit Corporation</span>
@@ -113,8 +59,7 @@ const Footer = () => {
 
         <div className="pt-8 mt-8 border-t border-background/20 text-center text-sm text-background/80">
           <p>
-            © {new Date().getFullYear()} Lifesaver Labs Public Benefit Corporation. Neighbor 911™ is a trademark. Code
-            released under MIT License.
+            © {new Date().getFullYear()} Lifesaver Labs Public Benefit Corporation. Neighbor 911™ is a trademark. All rights reserved.
           </p>
           <p className="mt-2 text-background/60">v0.0.6</p>
         </div>

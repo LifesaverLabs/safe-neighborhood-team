@@ -170,7 +170,7 @@ const Hero = () => {
           Emergency neighbor first first responders racing to you in under 90 seconds to 3 minutes, not 6 - 10 minutes
         </p>
         <p className="mb-6 sm:mb-8 text-sm sm:text-base lg:text-lg text-primary-foreground/80 max-w-2xl mx-auto px-2">
-          An open source platform connecting neighbors to respond to emergencies faster than traditional services
+          A platform connecting neighbors to respond to emergencies faster than traditional services
         </p>
 
         {/* Response Time Counter - Mobile/Tablet: below text, Large screens: hidden */}
@@ -200,16 +200,6 @@ const Hero = () => {
             className="text-base sm:text-lg w-full sm:w-auto"
           >
             Get Involved
-          </Button>
-          <Button
-            size="lg"
-            variant="outline"
-            className="text-base sm:text-lg w-full sm:w-auto bg-secondary md:bg-background/30 md:backdrop-blur-sm border-primary-foreground/50 text-primary-foreground hover:bg-secondary/90 md:hover:bg-background/40"
-            asChild
-          >
-            <a href="https://github.com/LifesaverLabs/NayborSOS" target="_blank" rel="noopener noreferrer">
-              View on GitHub
-            </a>
           </Button>
         </div>
       </div>

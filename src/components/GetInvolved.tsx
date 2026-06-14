@@ -99,7 +99,7 @@ const GetInvolved = () => {
             Help Build Neighbor 911™
           </h2>
           <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
-            This is an open source project built by volunteers. We need help from people with diverse skills and backgrounds.
+            This is a volunteer-built project. We need help from people with diverse skills and backgrounds.
           </p>
         </div>
 
@@ -135,7 +135,7 @@ const GetInvolved = () => {
               <CardContent className="space-y-2 text-sm text-muted-foreground">
                 
                 <p>• <strong>Seeking funding:</strong> We're actively looking for financial support</p>
-                <p>• <strong>Open source:</strong> MIT licensed code, trademark protected brand</p>
+                <p>• <strong>Trademark protected:</strong> Neighbor 911™ brand integrity</p>
                 <p>• <strong>Public Benefit Corp:</strong> Organized to serve community needs</p>
               </CardContent>
             </Card>

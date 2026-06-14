@@ -197,16 +197,8 @@ const ExistingSystems = () => {
                   >
                     Join the Neighbor 911™ Movement
                   </Button>
-                  <Button
-                    size="lg"
-                    variant="outline"
-                    asChild
-                  >
-                    <a href="https://github.com/LifesaverLabs/NayborSOS" target="_blank" rel="noopener noreferrer" className="gap-2">
-                      View Our Vision on GitHub
-                      <ExternalLink className="w-4 h-4" />
-                    </a>
-                  </Button>
+
+
                 </div>
               </div>
             </CardContent>
