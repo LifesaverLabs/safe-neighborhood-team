@@ -28,25 +28,8 @@ const About = () => {
               </CardContent>
             </Card>
 
-            <Card className="border-border">
-              <CardHeader>
-                <CardTitle className="flex items-center gap-2">
-                  <CheckCircle2 className="w-5 h-5 text-primary" />
-                  Open Source with IP Protection
-                </CardTitle>
-              </CardHeader>
-              <CardContent className="text-muted-foreground">
-                <p className="mb-4">
-                  All Neighbor 911™ code is released under the <strong>MIT License</strong>. The code is available for use, modification, and distribution.
-                </p>
-                <p className="mb-4">
-                  We also have a <strong>patent application pending</strong> on certain novel aspects of our emergency response network technology. This protects the unique innovations we've developed while still allowing the broader community to benefit from and build upon our open-source codebase.
-                </p>
-                <p className="flex items-center gap-2">
-                  <strong>Lives saved &gt; Proprietary control.</strong> The Neighbor 911™ trademark is protected to maintain a unified, trusted emergency response network.
-                </p>
-              </CardContent>
-            </Card>
+
+
 
             <Card className="border-border">
               <CardHeader>
@@ -68,21 +51,10 @@ const About = () => {
 
           <div className="flex flex-col gap-4 sm:flex-row justify-center">
             <a
-              href="https://github.com/LifesaverLabs/NayborSOS/blob/main/docs/ARCHITECTURE.md"
-              target="_blank"
-              rel="noopener noreferrer"
+              href="mailto:team@lifesaverlabs.org"
               className="inline-flex items-center justify-center gap-2 px-6 py-3 text-base font-medium text-primary-foreground bg-primary rounded-lg hover:opacity-90 transition-opacity"
             >
-              View Documentation
-              <ExternalLink className="w-4 h-4" />
-            </a>
-            <a
-              href="https://github.com/LifesaverLabs/NayborSOS"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="inline-flex items-center justify-center gap-2 px-6 py-3 text-base font-medium text-foreground bg-muted rounded-lg hover:bg-muted/80 transition-colors"
-            >
-              GitHub Repository
+              Contact the Team
               <ExternalLink className="w-4 h-4" />
             </a>
           </div>

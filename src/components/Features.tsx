@@ -1,4 +1,4 @@
-import { Clock, Users, Shield, Code, Heart, AlertCircle } from "lucide-react";
+import { Clock, Users, Shield, Heart, AlertCircle } from "lucide-react";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 
 const features = [
@@ -19,11 +19,6 @@ const features = [
     title: "Capability Matching",
     description:
       "Intelligent dispatch matches emergencies with neighbors who have specific skills, equipment, or willingness to help.",
-  },
-  {
-    icon: Code,
-    title: "Open Source",
-    description: "MIT licensed code. Transparent, auditable, and freely available for communities worldwide.",
   },
   {
     icon: Heart,
